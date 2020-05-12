@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Alexa" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Console\;Assisstant\;Console\Window\;Console\Sdl\;Console\$ Base $\;Console\Image\;Console\Input\;Console\Input\$ Base $\;Console\Input\Keyboard\;Console\Input\Mouse\;Console\Input\Z Action Z\;Element\;Element\Sprite\;Data\;Data\Image\;README\;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Alexa" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="D:/GAME PRODUCTION/FRAMEWORK/SDL/include" />
+		</Compiler>
+		<Linker>
+			<Add option="-lSDL2_image" />
+			<Add library="mingw32" />
+			<Add library="SDL2main" />
+			<Add library="SDL2.dll" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add directory="D:/GAME PRODUCTION/FRAMEWORK/SDL/lib" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
+		</ExtraCommands>
+		<Unit filename="README.txt">
+			<Option virtualFolder="README/" />
+		</Unit>
+		<Unit filename="ddata.cpp">
+			<Option virtualFolder="Data/" />
+		</Unit>
+		<Unit filename="ddata.h">
+			<Option virtualFolder="Data/" />
+		</Unit>
+		<Unit filename="dimage.cpp">
+			<Option virtualFolder="Data/Image/" />
+		</Unit>
+		<Unit filename="dimage.h">
+			<Option virtualFolder="Data/Image/" />
+		</Unit>
+		<Unit filename="eelement.cpp">
+			<Option virtualFolder="Element/" />
+		</Unit>
+		<Unit filename="eelement.h">
+			<Option virtualFolder="Element/" />
+		</Unit>
+		<Unit filename="esprite.cpp">
+			<Option virtualFolder="Element/Sprite/" />
+		</Unit>
+		<Unit filename="esprite.h">
+			<Option virtualFolder="Element/Sprite/" />
+		</Unit>
+		<Unit filename="haction.cpp">
+			<Option virtualFolder="Console/Input/Z Action Z/" />
+		</Unit>
+		<Unit filename="haction.h">
+			<Option virtualFolder="Console/Input/Z Action Z/" />
+		</Unit>
+		<Unit filename="hbase.cpp">
+			<Option virtualFolder="Console/$ Base $/" />
+		</Unit>
+		<Unit filename="hbase.h">
+			<Option virtualFolder="Console/$ Base $/" />
+		</Unit>
+		<Unit filename="hbase_input.cpp">
+			<Option virtualFolder="Console/Input/$ Base $/" />
+		</Unit>
+		<Unit filename="hbase_input.h">
+			<Option virtualFolder="Console/Input/$ Base $/" />
+		</Unit>
+		<Unit filename="hconsole.cpp">
+			<Option virtualFolder="Console/" />
+		</Unit>
+		<Unit filename="hconsole.h">
+			<Option virtualFolder="Console/" />
+		</Unit>
+		<Unit filename="hgame.cpp" />
+		<Unit filename="hgame.h" />
+		<Unit filename="hheader.h">
+			<Option virtualFolder="Assisstant/" />
+		</Unit>
+		<Unit filename="himage.cpp">
+			<Option virtualFolder="Console/Image/" />
+		</Unit>
+		<Unit filename="himage.h">
+			<Option virtualFolder="Console/Image/" />
+		</Unit>
+		<Unit filename="hinput.cpp">
+			<Option virtualFolder="Console/Input/" />
+		</Unit>
+		<Unit filename="hinput.h">
+			<Option virtualFolder="Console/Input/" />
+		</Unit>
+		<Unit filename="hkey.cpp">
+			<Option virtualFolder="Console/Input/Keyboard/" />
+		</Unit>
+		<Unit filename="hkey.h">
+			<Option virtualFolder="Console/Input/Keyboard/" />
+		</Unit>
+		<Unit filename="hmouse.cpp">
+			<Option virtualFolder="Console/Input/Mouse/" />
+		</Unit>
+		<Unit filename="hmouse.h">
+			<Option virtualFolder="Console/Input/Mouse/" />
+		</Unit>
+		<Unit filename="hsdl.cpp">
+			<Option virtualFolder="Console/Sdl/" />
+		</Unit>
+		<Unit filename="hsdl.h">
+			<Option virtualFolder="Console/Sdl/" />
+		</Unit>
+		<Unit filename="hwindow.cpp">
+			<Option virtualFolder="Console/Window/" />
+		</Unit>
+		<Unit filename="hwindow.h">
+			<Option virtualFolder="Console/Window/" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
