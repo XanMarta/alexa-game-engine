@@ -13,13 +13,13 @@ class sprite
 
 
         void render();
-        void set_scale(Vector2F scale);
+        void set_scale(Vector2 scale);
 
 
     private:
 
         Vector2 position = {0, 0};
-        Vector2F scale = {1.0, 1.0};
+        Vector2 scale = {1.0, 1.0};
 
 };
 

@@ -5,7 +5,7 @@
 		<Option title="Alexa" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Console\;Assisstant\;Console\Window\;Console\Sdl\;Console\$ Base $\;Console\Image\;Console\Input\;Console\Input\$ Base $\;Console\Input\Keyboard\;Console\Input\Mouse\;Console\Input\Z Action Z\;Element\;Element\Sprite\;Data\;Data\Image\;README\;" />
+		<Option virtualFolders="Console\;Assisstant\;Console\Window\;Console\Sdl\;Console\$ Base $\;Console\Image\;Console\Input\;Console\Input\$ Base $\;Console\Input\Keyboard\;Console\Input\Mouse\;Console\Input\Z Action Z\;Element\;Element\Sprite\;Data\;Data\Image\;README\;Console\$ Base $\Vector2\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
@@ -49,6 +49,12 @@
 		</ExtraCommands>
 		<Unit filename="README.txt">
 			<Option virtualFolder="README/" />
+		</Unit>
+		<Unit filename="Vector2.cpp">
+			<Option virtualFolder="Console/$ Base $/Vector2/" />
+		</Unit>
+		<Unit filename="Vector2.h">
+			<Option virtualFolder="Console/$ Base $/Vector2/" />
 		</Unit>
 		<Unit filename="ddata.cpp">
 			<Option virtualFolder="Data/" />

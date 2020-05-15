@@ -19,9 +19,13 @@ class input_pack
         void init_input();
         void update_input();
 
+
+
         bool is_on_pressed(action_type type);
         bool is_just_pressed(action_type type);
         bool is_just_released(action_type type);
+
+        int get_action_length(action_type type);
 
     private:
 

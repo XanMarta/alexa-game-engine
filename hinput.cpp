@@ -53,3 +53,9 @@ bool input_pack::is_just_released(action_type type)
 {
     return action[type].is_just_released();
 }
+
+int input_pack::get_action_length(action_type type)
+{
+    if (is_on_pressed(type)) return 1;
+    else return 0;
+}

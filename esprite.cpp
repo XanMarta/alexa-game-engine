@@ -2,7 +2,7 @@
 
 
 
-void sprite::set_scale(Vector2F scale)
+void sprite::set_scale(Vector2 scale)
 {
     this->scale = scale;
 }

@@ -21,7 +21,9 @@ bool image_pack::load_image(string path)
     texture = loadImageTexture(path);
     if (texture != NULL)
     {
-        SDL_QueryTexture(texture, NULL, NULL, &_size.x, &_size.y);
+        int w, h;
+        SDL_QueryTexture(texture, NULL, NULL, &w, &h);
+        _size = Vector2(w, h);
         return true;
     }
     else return false;
@@ -33,7 +35,7 @@ void image_pack::render(Vector2& position)
     SDL_RenderCopyEx(gRenderer, texture, NULL, &rect, rotation, NULL, flip);
 }
 
-void image_pack::render(Vector2& position, Vector2F& scale)
+void image_pack::render(Vector2& position, Vector2& scale)
 {
     SDL_Rect rect = {position.x, position.y, _size.x * scale.x, _size.y * scale.y};
     SDL_RenderCopyEx(gRenderer, texture, NULL, &rect, rotation, NULL, flip);

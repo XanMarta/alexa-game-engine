@@ -9,6 +9,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "Vector2.h"
+
 using namespace std;
 
 
@@ -18,20 +20,6 @@ extern SDL_Renderer* gRenderer;
 extern SDL_Event event;
 extern const Uint8* currentKey;
 
-
-// =================================================
-
-struct Vector2
-{
-    int x;
-    int y;
-};
-
-struct Vector2F
-{
-    float x;
-    float y;
-};
 
 // =================================================
 

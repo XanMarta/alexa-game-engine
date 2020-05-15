@@ -20,7 +20,7 @@ class image_pack
 
         bool load_image(string path);
         void render(Vector2& position);
-        void render(Vector2& position, Vector2F& scale);
+        void render(Vector2& position, Vector2& scale);
         void render(SDL_Rect& area);
 
         void set_flip(bool flip_h, bool flip_v);
