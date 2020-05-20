@@ -5,7 +5,7 @@
 		<Option title="Alexa" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Console\;Assisstant\;Console\Window\;Console\Sdl\;Console\$ Base $\;Console\Image\;Console\Input\;Console\Input\$ Base $\;Console\Input\Keyboard\;Console\Input\Mouse\;Console\Input\Z Action Z\;Element\;Data\;Data\Image\;README\;Console\$ Base $\Vector2\;Element\Node\;Element\Node\Sprite\;" />
+		<Option virtualFolders="Console\;Assisstant\;Assisstant\;Console\Window\;Assisstant\;Console\Sdl\;Assisstant\;Console\$ Base $\;Assisstant\;Console\Image\;Assisstant\;Console\Input\;Assisstant\;Console\Input\$ Base $\;Assisstant\;Console\Input\Keyboard\;Assisstant\;Console\Input\Mouse\;Assisstant\;Console\Input\Action\;Assisstant\;Console\$ Base $\;Assisstant\Vector2\;Element\Node\;Element\Node\Sprite\;README\;Element\;Data\;Data\Image\;Element\Node\zz Node\;Element\zz Element\;Data\zz Data\;Console\zz Console\;Console\Input\zz Input\;Element\Scene\;Scene\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
@@ -48,28 +48,40 @@
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
 		<Unit filename="Node.cpp">
-			<Option virtualFolder="Element/Node/" />
+			<Option virtualFolder="Element/Node/zz Node/" />
 		</Unit>
 		<Unit filename="Node.h">
-			<Option virtualFolder="Element/Node/" />
+			<Option virtualFolder="Element/Node/zz Node/" />
 		</Unit>
 		<Unit filename="Node_Base.h">
-			<Option virtualFolder="Element/Node/" />
+			<Option virtualFolder="Element/Node/zz Node/" />
 		</Unit>
 		<Unit filename="README.txt">
 			<Option virtualFolder="README/" />
 		</Unit>
+		<Unit filename="Scene.cpp">
+			<Option virtualFolder="Element/Scene/" />
+		</Unit>
+		<Unit filename="Scene.h">
+			<Option virtualFolder="Element/Scene/" />
+		</Unit>
+		<Unit filename="Sprite.cpp">
+			<Option virtualFolder="Element/Node/Sprite/" />
+		</Unit>
+		<Unit filename="Sprite.h">
+			<Option virtualFolder="Element/Node/Sprite/" />
+		</Unit>
 		<Unit filename="Vector2.cpp">
-			<Option virtualFolder="Console/$ Base $/Vector2/" />
+			<Option virtualFolder="Assisstant/Vector2/" />
 		</Unit>
 		<Unit filename="Vector2.h">
-			<Option virtualFolder="Console/$ Base $/Vector2/" />
+			<Option virtualFolder="Assisstant/Vector2/" />
 		</Unit>
 		<Unit filename="ddata.cpp">
-			<Option virtualFolder="Data/" />
+			<Option virtualFolder="Data/zz Data/" />
 		</Unit>
 		<Unit filename="ddata.h">
-			<Option virtualFolder="Data/" />
+			<Option virtualFolder="Data/zz Data/" />
 		</Unit>
 		<Unit filename="dimage.cpp">
 			<Option virtualFolder="Data/Image/" />
@@ -78,22 +90,16 @@
 			<Option virtualFolder="Data/Image/" />
 		</Unit>
 		<Unit filename="eelement.cpp">
-			<Option virtualFolder="Element/" />
+			<Option virtualFolder="Element/zz Element/" />
 		</Unit>
 		<Unit filename="eelement.h">
-			<Option virtualFolder="Element/" />
-		</Unit>
-		<Unit filename="esprite.cpp">
-			<Option virtualFolder="Element/Node/Sprite/" />
-		</Unit>
-		<Unit filename="esprite.h">
-			<Option virtualFolder="Element/Node/Sprite/" />
+			<Option virtualFolder="Element/zz Element/" />
 		</Unit>
 		<Unit filename="haction.cpp">
-			<Option virtualFolder="Console/Input/Z Action Z/" />
+			<Option virtualFolder="Console/Input/Action/" />
 		</Unit>
 		<Unit filename="haction.h">
-			<Option virtualFolder="Console/Input/Z Action Z/" />
+			<Option virtualFolder="Console/Input/Action/" />
 		</Unit>
 		<Unit filename="hbase.cpp">
 			<Option virtualFolder="Console/$ Base $/" />
@@ -108,10 +114,10 @@
 			<Option virtualFolder="Console/Input/$ Base $/" />
 		</Unit>
 		<Unit filename="hconsole.cpp">
-			<Option virtualFolder="Console/" />
+			<Option virtualFolder="Console/zz Console/" />
 		</Unit>
 		<Unit filename="hconsole.h">
-			<Option virtualFolder="Console/" />
+			<Option virtualFolder="Console/zz Console/" />
 		</Unit>
 		<Unit filename="hgame.cpp" />
 		<Unit filename="hgame.h" />
@@ -125,10 +131,10 @@
 			<Option virtualFolder="Console/Image/" />
 		</Unit>
 		<Unit filename="hinput.cpp">
-			<Option virtualFolder="Console/Input/" />
+			<Option virtualFolder="Console/Input/zz Input/" />
 		</Unit>
 		<Unit filename="hinput.h">
-			<Option virtualFolder="Console/Input/" />
+			<Option virtualFolder="Console/Input/zz Input/" />
 		</Unit>
 		<Unit filename="hkey.cpp">
 			<Option virtualFolder="Console/Input/Keyboard/" />
@@ -155,6 +161,12 @@
 			<Option virtualFolder="Console/Window/" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="test_scene.cpp">
+			<Option virtualFolder="Scene/" />
+		</Unit>
+		<Unit filename="test_scene.h">
+			<Option virtualFolder="Scene/" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
