@@ -27,6 +27,8 @@ struct Vector2
     Vector2 operator-(const Vector2& _vector2);
     Vector2 operator*(const float& _number);
     Vector2 operator/(const float& _number);
+    Vector2 operator*(const Vector2& _vector2);
+    Vector2 operator/(const Vector2& _vector2);
 
     void operator+=(const Vector2& _vector2);
     void operator-=(const Vector2& _vector2);

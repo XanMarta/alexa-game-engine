@@ -5,7 +5,7 @@
 		<Option title="Alexa" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Console\;Assisstant\;Console\Window\;Console\Sdl\;Console\$ Base $\;Console\Image\;Console\Input\;Console\Input\$ Base $\;Console\Input\Keyboard\;Console\Input\Mouse\;Console\Input\Z Action Z\;Element\;Element\Sprite\;Data\;Data\Image\;README\;Console\$ Base $\Vector2\;" />
+		<Option virtualFolders="Console\;Assisstant\;Console\Window\;Console\Sdl\;Console\$ Base $\;Console\Image\;Console\Input\;Console\Input\$ Base $\;Console\Input\Keyboard\;Console\Input\Mouse\;Console\Input\Z Action Z\;Element\;Data\;Data\Image\;README\;Console\$ Base $\Vector2\;Element\Node\;Element\Node\Sprite\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
@@ -47,6 +47,15 @@
 		<ExtraCommands>
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
+		<Unit filename="Node.cpp">
+			<Option virtualFolder="Element/Node/" />
+		</Unit>
+		<Unit filename="Node.h">
+			<Option virtualFolder="Element/Node/" />
+		</Unit>
+		<Unit filename="Node_Base.h">
+			<Option virtualFolder="Element/Node/" />
+		</Unit>
 		<Unit filename="README.txt">
 			<Option virtualFolder="README/" />
 		</Unit>
@@ -75,10 +84,10 @@
 			<Option virtualFolder="Element/" />
 		</Unit>
 		<Unit filename="esprite.cpp">
-			<Option virtualFolder="Element/Sprite/" />
+			<Option virtualFolder="Element/Node/Sprite/" />
 		</Unit>
 		<Unit filename="esprite.h">
-			<Option virtualFolder="Element/Sprite/" />
+			<Option virtualFolder="Element/Node/Sprite/" />
 		</Unit>
 		<Unit filename="haction.cpp">
 			<Option virtualFolder="Console/Input/Z Action Z/" />

@@ -2,12 +2,12 @@
 #include <cmath>
 
 
-Vector2 Vector2::ZERO   = Vector2(0, 0);
-Vector2 Vector2::ONE    = Vector2(1, 1);
-Vector2 Vector2::UP     = Vector2(0, 1);
-Vector2 Vector2::LEFT   = Vector2(-1, 0);
-Vector2 Vector2::DOWN   = Vector2(0, -1);
-Vector2 Vector2::RIGHT  = Vector2(1, 0);
+Vector2 Vector2::ZERO   = Vector2(0.0, 0.0);
+Vector2 Vector2::ONE    = Vector2(1.0, 1.0);
+Vector2 Vector2::UP     = Vector2(0.0, 1.0);
+Vector2 Vector2::LEFT   = Vector2(-1.0, 0.0);
+Vector2 Vector2::DOWN   = Vector2(0.0, -1.0);
+Vector2 Vector2::RIGHT  = Vector2(1.0, 0.0);
 
 
 Vector2::Vector2()
@@ -41,6 +41,19 @@ Vector2 Vector2::operator/(const float& _number)
 {
     return Vector2(this->x / _number, this->y / _number);
 }
+
+Vector2 Vector2::operator*(const Vector2& _vector2)
+{
+    return Vector2(this->x * _vector2.x, this->y * _vector2.y);
+}
+
+Vector2 Vector2::operator/(const Vector2& _vector2)
+{
+    return Vector2(this->x / _vector2.x, this->y / _vector2.y);
+}
+
+
+
 
 void Vector2::operator+=(const Vector2& _vector2)
 {

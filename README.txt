@@ -2,9 +2,9 @@
 * Window settings:              root/Console/Window/hwindow.h
 
 
-* Keyboard settings:            root/Console/Input/Z Action Z/haction.h
+* Keyboard settings:            root/Console/Input/Action/haction.h
 
-* Input and Action settings:    root/Console/Input/hinput.h
+* Input and Action settings:    root/Console/Input/zz Input/hinput.h
 
 
 

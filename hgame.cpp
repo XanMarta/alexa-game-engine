@@ -2,12 +2,13 @@
 
 void play_game()
 {
-    sprite man;
+    Sprite man;
     if (init_console() && load_data())
     {
         cout << "init console\n";
         man.image = BACKGROUND;
-        man.set_scale({0.5, 0.5});
+        man.scale = Vector2(0.5, 0.5);
+        man.position.x += 10;
         while (true)
         {
             check_event();
