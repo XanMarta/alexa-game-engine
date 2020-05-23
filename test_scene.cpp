@@ -1,45 +1,42 @@
 #include "test_scene.h"
 
 
-
-
-
 void test_scene::setup()
 {
-    root = new test_scene_root();
-    root->name = "Root";
-
-    Sprite* sprite = new Sprite();
-    sprite->name = "sprite";
-    sprite->image = BACKGROUND;
-    sprite->scale = Vector2(0.5, 0.5);
-    sprite->position += Vector2(30, 30);
-    root->add_child(sprite);
-
-    cout << "Setup completely\n";
-    cout << root->get_child("sprite")->name << endl;
-
+    test_scene_root* _root = new test_scene_root();
+    _root->setup();
+    root = _root;
 }
 
 // ==============================================
 
-void test_scene_root::_ready()
+void test_scene_root::setup()
 {
-    cout << "test scene root ready\n";
+    player = new Node("player");
+    add_child(player);
+
+    sprite1 = new Sprite();
+    sprite1->name = "sprite1";
+    sprite1->image = BACKGROUND;
+    sprite1->scale = Vector2(0.2, 0.2);
+    player->add_child(sprite1);
+
+    sprite2 = new Sprite();
+    sprite2->name = "sprite2";
+    sprite2->image = BACKGROUND;
+    sprite2->fix_to_size(Vector2(360, 360));
+    sprite2->position = Vector2(360, 200);
+    player->add_child(sprite2);
 }
+
+
+// ==============================================
 
 
 void test_scene_root::_physics_process()
 {
-    if (Input.is_just_pressed(MOVE_DOWN)) cout << "Move down pressed\n";
-
-    if (Input.is_just_released(MOVE_DOWN)) cout << "Move down released\n";
-
-    if (Input.is_on_pressed(MOVE_DOWN)) cout << "Move down on pressed\n";
-
-    if (Input.is_just_pressed(MOUSE_C)) cout << "Mouse pressed\n";
-
-    if (Input.is_just_released(MOUSE_C)) cout << "Mouse released\n";
-
-    if (Input.is_on_pressed(MOUSE_C)) cout << "Mouse on pressed\n";
+    if (Input.is_on_pressed(MOVE_UP)) player->position.y -= 1;
+    if (Input.is_on_pressed(MOVE_DOWN)) player->position.y += 1;
+    if (Input.is_on_pressed(MOVE_LEFT)) player->position.x -= 1;
+    if (Input.is_on_pressed(MOVE_RIGHT)) player->position.x += 1;
 }

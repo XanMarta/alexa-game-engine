@@ -29,19 +29,19 @@ bool image_pack::load_image(string path)
     else return false;
 }
 
-void image_pack::render(Vector2& position)
+void image_pack::render(const Vector2& position)
 {
     SDL_Rect rect = {position.x, position.y, _size.x, _size.y};
     SDL_RenderCopyEx(gRenderer, texture, NULL, &rect, rotation, NULL, flip);
 }
 
-void image_pack::render(Vector2& position, Vector2& scale)
+void image_pack::render(const Vector2& position, const Vector2& scale)
 {
     SDL_Rect rect = {position.x, position.y, _size.x * scale.x, _size.y * scale.y};
     SDL_RenderCopyEx(gRenderer, texture, NULL, &rect, rotation, NULL, flip);
 }
 
-void image_pack::render(SDL_Rect& area)
+void image_pack::render(const SDL_Rect& area)
 {
     SDL_RenderCopyEx(gRenderer, texture, NULL, &area, rotation, NULL, flip);
 }

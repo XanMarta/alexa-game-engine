@@ -40,7 +40,7 @@ void play_game()
             }
 
             clear_console();
-            man.render();
+//            man.render();
             show_image();
         }
         cout << "Close console\n";

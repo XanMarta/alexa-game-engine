@@ -8,12 +8,18 @@ class test_scene_root : public Node
 {
     public:
 
-        Sprite sprite;
+        Node* player;
+            Sprite* sprite1;
+            Sprite* sprite2;
 
 
-        void _ready();
+
         void _physics_process();
+
+        void setup();
 };
+
+
 
 class test_scene : public Scene
 {

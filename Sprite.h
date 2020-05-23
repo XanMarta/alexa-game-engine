@@ -13,14 +13,14 @@ class Sprite : public Node
         bool is_showing = true;
 
 
-        void render();
+        void fix_to_size(Vector2 new_size);
 
         void _physics_process();
 
 
     private:
 
-
+        void render();
 
 };
 
