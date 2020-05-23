@@ -6,12 +6,18 @@
 
 void test_scene::setup()
 {
-    Sprite* sprite = new test_scene_root();
+    root = new test_scene_root();
+    root->name = "Root";
+
+    Sprite* sprite = new Sprite();
+    sprite->name = "sprite";
     sprite->image = BACKGROUND;
     sprite->scale = Vector2(0.5, 0.5);
     sprite->position += Vector2(30, 30);
+    root->add_child(sprite);
 
-    root = sprite;
+    cout << "Setup completely\n";
+    cout << root->get_child("sprite")->name << endl;
 
 }
 
@@ -22,11 +28,6 @@ void test_scene_root::_ready()
     cout << "test scene root ready\n";
 }
 
-void test_scene_root::_process()
-{
-
-
-}
 
 void test_scene_root::_physics_process()
 {

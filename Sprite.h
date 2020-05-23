@@ -10,9 +10,12 @@ class Sprite : public Node
     public:
 
         image_type image;
+        bool is_showing = true;
 
 
         void render();
+
+        void _physics_process();
 
 
     private:

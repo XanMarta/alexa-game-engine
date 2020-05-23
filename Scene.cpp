@@ -10,6 +10,7 @@ void Scene::run()
         prepare_phase();
         while (is_running)
         {
+            clear_console();
             check_event();
             collision_phase();
             process_phase();
@@ -19,6 +20,11 @@ void Scene::run()
         }
         close_phase();
     }
+}
+
+void Scene::close()
+{
+    is_running = false;
 }
 
 void Scene::prepare_phase()
@@ -46,8 +52,6 @@ void Scene::process_phase()
 
 void Scene::render_phase()
 {
-    clear_console();
-
     show_image();
 }
 

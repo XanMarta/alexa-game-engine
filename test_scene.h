@@ -4,12 +4,14 @@
 #include "Scene.h"
 #include "Sprite.h"
 
-class test_scene_root : public Sprite
+class test_scene_root : public Node
 {
     public:
 
+        Sprite sprite;
+
+
         void _ready();
-        void _process();
         void _physics_process();
 };
 

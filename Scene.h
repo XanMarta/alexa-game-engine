@@ -4,18 +4,23 @@
 #include "Node.h"
 #include "hconsole.h"
 
+
+
 const float DELTA = 1 / 60;
 const float DELAY_TIME = DELTA * 1000;
-const int PROCESS_FRAME_DIFF = 3;
+const int PROCESS_FRAME_DIFF = 2;
 
 
 class Scene
 {
     public:
 
+        virtual ~Scene() {}
+
         Node* root = NULL;
 
         void run();
+        void close();
 
     protected:
 
@@ -32,6 +37,8 @@ class Scene
 
         bool is_running = true;
         int process_frame;
+
+        int temp = 0;
 };
 
 

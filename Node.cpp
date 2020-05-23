@@ -13,7 +13,7 @@ Node::Node(string name)
 
 Node::~Node()
 {
-    // cout << "Destructor of " << name << "\n";
+//     cout << "Destructor of " << name << "\n";
 }
 
 void Node::add_child(Node* new_child)
