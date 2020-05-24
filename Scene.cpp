@@ -1,5 +1,5 @@
 #include "Scene.h"
-
+#include "CollisionBase.h"
 
 
 void Scene::run()
@@ -36,7 +36,7 @@ void Scene::prepare_phase()
 
 void Scene::collision_phase()
 {
-
+    check_collision();
 }
 
 void Scene::process_phase()

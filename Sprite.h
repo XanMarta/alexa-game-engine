@@ -1,16 +1,15 @@
 #ifndef SPRITE_H_INCLUDED
 #define SPRITE_H_INCLUDED
 
-#include "Node.h"
+#include "CanvasItem.h"
 #include "dimage.h"
 
 
-class Sprite : public Node
+class Sprite : public CanvasItem
 {
     public:
 
         image_type image;
-        bool is_showing = true;
 
 
         void fix_to_size(Vector2 new_size);

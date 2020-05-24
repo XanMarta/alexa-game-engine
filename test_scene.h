@@ -3,14 +3,18 @@
 
 #include "Scene.h"
 #include "Sprite.h"
+#include "CollisionObject.h"
 
 class test_scene_root : public Node
 {
     public:
 
-        Node* player;
+        Sprite* backg;
+        CollisionObject* player;
+            CollisionShape* player_collision;
             Sprite* sprite1;
-            Sprite* sprite2;
+        CollisionObject* ball;
+            CollisionShape* ball_collision;
 
 
 

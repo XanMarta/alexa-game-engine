@@ -6,7 +6,7 @@
 
 enum image_type
 {
-    BACKGROUND,
+    BACKGROUND, COIN,
     TOTAL_IMAGE
 };
 

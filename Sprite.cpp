@@ -8,7 +8,7 @@ void Sprite::fix_to_size(Vector2 new_size)
 
 void Sprite::render()
 {
-    image_data[image].render(get_position(), get_scale());
+    image_data[image].render(get_position(), get_scale(), alpha);
 }
 
 void Sprite::_physics_process()

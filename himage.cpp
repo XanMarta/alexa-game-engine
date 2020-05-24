@@ -24,6 +24,7 @@ bool image_pack::load_image(string path)
         int w, h;
         SDL_QueryTexture(texture, NULL, NULL, &w, &h);
         _size = Vector2(w, h);
+        SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
         return true;
     }
     else return false;
@@ -35,8 +36,9 @@ void image_pack::render(const Vector2& position)
     SDL_RenderCopyEx(gRenderer, texture, NULL, &rect, rotation, NULL, flip);
 }
 
-void image_pack::render(const Vector2& position, const Vector2& scale)
+void image_pack::render(const Vector2& position, const Vector2& scale, const int& alpha)
 {
+    SDL_SetTextureAlphaMod(texture, alpha);
     SDL_Rect rect = {position.x, position.y, _size.x * scale.x, _size.y * scale.y};
     SDL_RenderCopyEx(gRenderer, texture, NULL, &rect, rotation, NULL, flip);
 }

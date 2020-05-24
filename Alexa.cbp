@@ -5,7 +5,7 @@
 		<Option title="Alexa" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Console\;Assisstant\;Assisstant\;Console\Window\;Assisstant\;Console\Sdl\;Assisstant\;Console\$ Base $\;Assisstant\;Console\Image\;Assisstant\;Console\Input\;Assisstant\;Console\Input\$ Base $\;Assisstant\;Console\Input\Keyboard\;Assisstant\;Console\Input\Mouse\;Assisstant\;Console\Input\Action\;Assisstant\;Console\$ Base $\;Assisstant\Vector2\;Element\Node\;Element\Node\Sprite\;README\;Element\;Data\;Data\Image\;Element\Node\zz Node\;Element\zz Element\;Data\zz Data\;Console\zz Console\;Console\Input\zz Input\;Element\Scene\;Scene\;" />
+		<Option virtualFolders="Console\;Assisstant\;Assisstant\;Console\Window\;Assisstant\;Console\Sdl\;Assisstant\;Console\$ Base $\;Assisstant\;Console\Image\;Assisstant\;Console\Input\;Assisstant\;Console\Input\$ Base $\;Assisstant\;Console\Input\Keyboard\;Assisstant\;Console\Input\Mouse\;Assisstant\;Console\Input\Action\;Assisstant\;Console\$ Base $\;Assisstant\Vector2\;Element\Node\;README\;Element\;Data\;Data\Image\;Element\Node\zz Node\;Element\zz Element\;Data\zz Data\;Console\zz Console\;Console\Input\zz Input\;Element\Scene\;Scene\;Element\Node\CanvasItem\;Element\Node\CanvasItem\zz CanvasItem\;Element\Node\CanvasItem\Sprite\;Element\Node\CanvasItem\CollisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\$ Base $\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
@@ -47,6 +47,24 @@
 		<ExtraCommands>
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
+		<Unit filename="CanvasItem.cpp">
+			<Option virtualFolder="Element/Node/CanvasItem/zz CanvasItem/" />
+		</Unit>
+		<Unit filename="CanvasItem.h">
+			<Option virtualFolder="Element/Node/CanvasItem/zz CanvasItem/" />
+		</Unit>
+		<Unit filename="CollisionBase.cpp">
+			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/$ Base $/" />
+		</Unit>
+		<Unit filename="CollisionBase.h">
+			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/$ Base $/" />
+		</Unit>
+		<Unit filename="CollisionObject.cpp">
+			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/" />
+		</Unit>
+		<Unit filename="CollisionObject.h">
+			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/" />
+		</Unit>
 		<Unit filename="Node.cpp">
 			<Option virtualFolder="Element/Node/zz Node/" />
 		</Unit>
@@ -66,10 +84,10 @@
 			<Option virtualFolder="Element/Scene/" />
 		</Unit>
 		<Unit filename="Sprite.cpp">
-			<Option virtualFolder="Element/Node/Sprite/" />
+			<Option virtualFolder="Element/Node/CanvasItem/Sprite/" />
 		</Unit>
 		<Unit filename="Sprite.h">
-			<Option virtualFolder="Element/Node/Sprite/" />
+			<Option virtualFolder="Element/Node/CanvasItem/Sprite/" />
 		</Unit>
 		<Unit filename="Vector2.cpp">
 			<Option virtualFolder="Assisstant/Vector2/" />
