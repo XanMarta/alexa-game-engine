@@ -2,6 +2,7 @@
 #define NODE_BASE_H_INCLUDED
 
 #include "Vector2.h"
+#include "signal.h"
 
 
 class Node_Base

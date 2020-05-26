@@ -3,7 +3,9 @@
 
 #include <bits/stdc++.h>
 #include <vector>
+#include <map>
 #include "Node_Base.h"
+#include "Signal.h"
 using namespace std;
 
 
@@ -25,9 +27,15 @@ class Node : public Node_Base
         Node(string name);
         ~Node();
 
+
         void add_child(Node* new_child);
         Node* get_child(string name);
         void unlink_child(string name);
+
+
+        void emit_signal(string signal_name);
+        void connect_signal(string signal_name, void (*func)());
+
 
         void free();
         void free_child(string name = "");
@@ -41,6 +49,10 @@ class Node : public Node_Base
 
         Vector2 get_position();
         Vector2 get_scale();
+
+    private:
+
+        map<string, SignalPack> signal;
 
 };
 

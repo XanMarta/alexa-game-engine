@@ -18,7 +18,17 @@ class CollisionObject : public CanvasItem
 
 
         virtual void on_collision() {}
+        virtual void on_just_collision() {}
+        virtual void on_not_collision() {}
+        virtual void on_just_not_collision() {}
 
+
+
+        void check_collide(bool is_collide);
+
+    private:
+
+        bool is_colliding = false;
 
 };
 

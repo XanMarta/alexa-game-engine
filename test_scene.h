@@ -17,7 +17,7 @@ class test_scene_root : public Node
             CollisionShape* ball_collision;
 
 
-
+        void _ready();
         void _physics_process();
 
         void setup();

@@ -55,11 +55,22 @@ void test_scene_root::setup()
 
 // ==============================================
 
+void test_func()
+{
+    cout << "Test func called\n";
+}
+
+void test_scene_root::_ready()
+{
+    connect_signal("temp", test_func);
+}
 
 void test_scene_root::_physics_process()
 {
     if (Input.is_on_pressed(MOVE_UP)) player->position.y -= 2;
     if (Input.is_on_pressed(MOVE_DOWN)) player->position.y += 2;
     if (Input.is_on_pressed(MOVE_LEFT)) player->position.x -= 2;
-    if (Input.is_on_pressed(MOVE_RIGHT)) player->position.x += 2;
+    if (Input.is_on_pressed(MOVE_RIGHT)) emit_signal("temp");
 }
+
+

@@ -38,10 +38,9 @@ void check_collision()
                     CollisionShape* object_checking = layer[layer_check].object[l];
                     if (on_collision(object_check, object_checking))
                     {
-                        object_check->object->on_collision();
-                        cout << "Collision of " << object_check->name << " detected\n";
+                        object_check->object->check_collide(true);
                     }
-//                    else cout << "\n";
+                    else object_check->object->check_collide(false);
                 }
             }
         }

@@ -45,6 +45,16 @@ void Node::unlink_child(string name)
     }
 }
 
+void Node::emit_signal(string signal_name)
+{
+    signal[signal_name].emit();
+}
+
+void Node::connect_signal(string signal_name, void (*func)())
+{
+    signal[signal_name].connect(func);
+}
+
 void Node::free()
 {
     free_child();
