@@ -4,6 +4,16 @@
 #include "CanvasItem.h"
 #include "CollisionBase.h"
 
+/*
+    CollisionObject
+        object to check to collision with another object
+        Need CollisionShape as its child
+
+    Signal:
+        on_just_collision
+        on_just_not_collision
+
+*/
 
 class CollisionShape;
 
@@ -15,13 +25,6 @@ class CollisionObject : public CanvasItem
 
 
         void set_collision_shape(CollisionShape* shape);
-
-
-        virtual void on_collision() {}
-        virtual void on_just_collision() {}
-        virtual void on_not_collision() {}
-        virtual void on_just_not_collision() {}
-
 
 
         void check_collide(bool is_collide);

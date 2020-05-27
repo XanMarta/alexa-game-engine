@@ -5,9 +5,10 @@
 #include <vector>
 #include <map>
 #include "Node_Base.h"
-#include "Signal.h"
 using namespace std;
 
+
+class SignalPack;
 
 class Node : public Node_Base
 {
@@ -34,7 +35,8 @@ class Node : public Node_Base
 
 
         void emit_signal(string signal_name);
-        void connect_signal(string signal_name, void (*func)());
+        void connect_signal(string signal_name, Node* target);
+        virtual void execute_signal(string signal_name) {}
 
 
         void free();
@@ -56,5 +58,20 @@ class Node : public Node_Base
 
 };
 
+// =========================================================
+
+class SignalPack
+{
+    public:
+
+        void emit(string signal_name);
+        void connect(Node* node);
+
+    private:
+
+        vector<Node*> target;
+};
+
+// =========================================================
 
 #endif // NODE_H_INCLUDED

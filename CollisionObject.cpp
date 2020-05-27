@@ -14,14 +14,12 @@ void CollisionObject::check_collide(bool is_collide)
 {
     if (is_collide)
     {
-        if (!is_colliding) on_just_collision();
-        else on_collision();
+        if (!is_colliding) emit_signal("on_just_collision");
         is_colliding = true;
     }
     else
     {
-        if (is_colliding) on_just_not_collision();
-        else on_not_collision();
+        if (is_colliding) emit_signal("on_just_not_collision");
         is_colliding = false;
     }
 }

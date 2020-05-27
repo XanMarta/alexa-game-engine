@@ -47,12 +47,12 @@ void Node::unlink_child(string name)
 
 void Node::emit_signal(string signal_name)
 {
-    signal[signal_name].emit();
+    if (signal.count(signal_name) > 0) signal[signal_name].emit(signal_name);
 }
 
-void Node::connect_signal(string signal_name, void (*func)())
+void Node::connect_signal(string signal_name, Node* target)
 {
-    signal[signal_name].connect(func);
+    signal[signal_name].connect(target);
 }
 
 void Node::free()
@@ -135,4 +135,20 @@ Vector2 Node::get_scale()
 {
     if (parent != NULL) return parent->get_scale() * this->scale;
     else return this->scale;
+}
+
+
+// ===========================================================
+
+void SignalPack::emit(string signal_name)
+{
+    for (int i = 0; i < target.size(); i++)
+    {
+        target[i]->execute_signal(signal_name);
+    }
+}
+
+void SignalPack::connect(Node* node)
+{
+    target.push_back(node);
 }
