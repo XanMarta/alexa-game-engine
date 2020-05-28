@@ -36,3 +36,13 @@ void CollisionShape::_physics_process()
         draw_rectangle({pos.x, pos.y, _size.x, _size.y}, {0x00, 0x00, 0xFF});
     }
 }
+
+// ==============================================================
+
+void CollisionPack::reset()
+{
+    direct = Vector2().ZERO;
+    distance = Vector2().ZERO;
+    object = NULL;
+    is_collision = false;
+}

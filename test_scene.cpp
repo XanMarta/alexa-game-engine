@@ -45,9 +45,10 @@ void test_scene_root::setup()
 
         ball_collision = new CollisionShape();
         ball_collision->name = "ball_collision";
+        ball_collision->position = Vector2(100, 100);
         ball_collision->layer.push_back(WALL);
         ball_collision->mask.push_back(PLAYER);
-        ball_collision->_size = Vector2(500, 20);
+        ball_collision->_size = Vector2(100, 100);
         ball->add_child(ball_collision);
         ball->set_collision_shape(ball_collision);
 
@@ -87,21 +88,28 @@ void test_scene_root::_ready()
 
 void test_scene_root::_physics_process()
 {
-    if (Input.is_on_pressed(MOVE_UP)) player->position.y -= 2;
-    if (Input.is_on_pressed(MOVE_DOWN)) player->position.y += 2;
-    if (Input.is_on_pressed(MOVE_LEFT)) player->position.x -= 2;
-    if (Input.is_on_pressed(MOVE_RIGHT)) player->position.x += 2;
+    Vector2 direction;
+    direction.x = Input.get_action_length(MOVE_RIGHT) - Input.get_action_length(MOVE_LEFT);
+    direction.y = Input.get_action_length(MOVE_DOWN) - Input.get_action_length(MOVE_UP);
+    direction = direction.normalize();
+    direction *= 3;
+
+    player->position += direction;
 }
 
 
 void test_scene_root::go()
 {
-    cout << "Go go\n";
+    cout << "\n";
 }
 
 void test_scene_root::dance()
 {
     cout << "Dance till we die\n";
+    CollisionPack& collision = player->collision;
+    cout << "Direct: " << collision.direct.x << " " << collision.direct.y << "\n";
+    cout << "Distance: " << collision.distance.x << " " << collision.distance.y << "\n";
+    cout << "Object: " << collision.object->name << "\n";
 }
 
 void test_scene_root::stop()

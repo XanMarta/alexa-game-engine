@@ -137,8 +137,6 @@
 		<Unit filename="hconsole.h">
 			<Option virtualFolder="Console/zz Console/" />
 		</Unit>
-		<Unit filename="hgame.cpp" />
-		<Unit filename="hgame.h" />
 		<Unit filename="hheader.h">
 			<Option virtualFolder="Assisstant/" />
 		</Unit>

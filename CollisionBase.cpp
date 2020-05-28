@@ -64,5 +64,42 @@ bool on_collision(CollisionShape* shape1, CollisionShape* shape2)
     if (pos2.x + shape2->_size.x < pos1.x) return false;
     if (pos1.y + shape1->_size.y < pos2.y) return false;
     if (pos2.y + shape2->_size.y < pos1.y) return false;
+
+
+    CollisionPack& collision = shape1->object->collision;
+    collision.reset();
+    collision.object = shape2->object;
+    collision.is_collision = true;
+
+    if (pos1.x < pos2.x)
+    {
+        collision.direct.x++;
+        collision.distance.x = pos1.x + shape1->_size.x - pos2.x;
+    }
+    else
+    {
+        collision.direct.x--;
+        collision.distance.x = pos2.x + shape2->_size.x - pos1.x;
+    }
+    if (pos1.y < pos2.y)
+    {
+        collision.direct.y--;
+        collision.distance.y = pos1.y + shape1->_size.y - pos2.y;
+    }
+    else
+    {
+        collision.direct.y++;
+        collision.distance.y = pos2.y + shape2->_size.y - pos1.y;
+    }
+
+    if (collision.distance.x < collision.distance.y)
+    {
+        collision.direct.y = 0;
+    }
+    else
+    {
+        collision.direct.x = 0;
+    }
+
     return true;
 }

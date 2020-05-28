@@ -16,6 +16,25 @@
 */
 
 class CollisionShape;
+class CollisionObject;
+
+// =======================================================
+// Detail of collision
+class CollisionPack
+{
+    public:
+
+        Vector2 direct = Vector2().ZERO;
+        Vector2 distance = Vector2().ZERO;
+        CollisionObject* object = NULL;
+        bool is_collision = false;
+
+
+        void reset();
+
+};
+
+// =======================================================
 
 class CollisionObject : public CanvasItem
 {
@@ -23,8 +42,11 @@ class CollisionObject : public CanvasItem
 
         CollisionShape* shape;
 
+        CollisionPack collision;
 
-        void set_collision_shape(CollisionShape* shape);
+
+
+        void set_collision_shape(CollisionShape* shape);    // Must be called on ready
 
 
         void check_collide(bool is_collide);
@@ -47,15 +69,14 @@ class CollisionShape : public Node
         Vector2 _size = Vector2().ZERO;
 
 
-
         CollisionObject* object;
-
 
         void _physics_process();
 };
 
-// =======================================================
 
+
+// =======================================================
 
 void update_collision(CollisionShape* shape);   // Declaration on CollisionBase.cpp
 

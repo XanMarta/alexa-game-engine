@@ -99,5 +99,6 @@ Vector2 Vector2::direction_to(Vector2& _vector2)
 
 Vector2 Vector2::normalize()
 {
+    if (this->length() == 0) return ZERO;
     return (*this / this->length());
 }
