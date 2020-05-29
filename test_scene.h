@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "Sprite.h"
 #include "CollisionObject.h"
+#include "KinematicBody.h"
 
 class test_scene_2 : public Node
 {
@@ -23,7 +24,7 @@ class test_scene_root : public Node
     public:
 
         Sprite* backg;
-        CollisionObject* player;
+        KinematicBody* player;
             CollisionShape* player_collision;
             Sprite* sprite1;
         CollisionObject* ball;

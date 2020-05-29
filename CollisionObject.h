@@ -12,7 +12,6 @@
     Signal:
         on_just_collision
         on_just_not_collision
-
 */
 
 class CollisionShape;

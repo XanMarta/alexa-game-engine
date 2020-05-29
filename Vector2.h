@@ -1,7 +1,10 @@
 #ifndef VECTOR2_H_INCLUDED
 #define VECTOR2_H_INCLUDED
 
-
+/*
+    UP:     Vector2(0, -1)
+    DOWN:   Vector2(0, 1)
+*/
 
 struct Vector2
 {
@@ -35,8 +38,11 @@ struct Vector2
     void operator*=(const float& _number);
     void operator/=(const float& _number);
 
+    bool operator==(const Vector2& _vector2);
+    bool operator!=(const Vector2& _vector2);
 
 
+    Vector2 bounce(const float& amount = 1.0);
     float dot(const Vector2& _vector2);
     float length();
     float distance_to(const Vector2& _vector2);

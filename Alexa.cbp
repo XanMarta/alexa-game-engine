@@ -5,7 +5,7 @@
 		<Option title="Alexa" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Console\;Assisstant\;Assisstant\;Console\Window\;Assisstant\;Console\Sdl\;Assisstant\;Console\$ Base $\;Assisstant\;Console\Image\;Assisstant\;Console\Input\;Assisstant\;Console\Input\$ Base $\;Assisstant\;Console\Input\Keyboard\;Assisstant\;Console\Input\Mouse\;Assisstant\;Console\Input\Action\;Assisstant\;Console\$ Base $\;Assisstant\Vector2\;Element\Node\;README\;Element\;Data\;Data\Image\;Element\Node\zz Node\;Element\zz Element\;Data\zz Data\;Console\zz Console\;Console\Input\zz Input\;Element\Scene\;Scene\;Element\Node\CanvasItem\;Element\Node\CanvasItem\zz CanvasItem\;Element\Node\CanvasItem\Sprite\;Element\Node\CanvasItem\CollisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\$ Base $\;" />
+		<Option virtualFolders="Console\;Assisstant\;Assisstant\;Console\Window\;Assisstant\;Console\Sdl\;Assisstant\;Console\$ Base $\;Assisstant\;Console\Image\;Assisstant\;Console\Input\;Assisstant\;Console\Input\$ Base $\;Assisstant\;Console\Input\Keyboard\;Assisstant\;Console\Input\Mouse\;Assisstant\;Console\Input\Action\;Assisstant\;Console\$ Base $\;Assisstant\Vector2\;Element\Node\;README\;Element\;Data\;Data\Image\;Element\Node\zz Node\;Element\zz Element\;Data\zz Data\;Console\zz Console\;Console\Input\zz Input\;Element\Scene\;Scene\;Element\Node\CanvasItem\;Element\Node\CanvasItem\zz CanvasItem\;Element\Node\CanvasItem\Sprite\;Element\Node\CanvasItem\CollisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\$ Base $\;Element\Node\CanvasItem\CollisionObject\KinematicBody\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
@@ -64,6 +64,12 @@
 		</Unit>
 		<Unit filename="CollisionObject.h">
 			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/" />
+		</Unit>
+		<Unit filename="KinematicBody.cpp">
+			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/KinematicBody/" />
+		</Unit>
+		<Unit filename="KinematicBody.h">
+			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/KinematicBody/" />
 		</Unit>
 		<Unit filename="Node.cpp">
 			<Option virtualFolder="Element/Node/zz Node/" />

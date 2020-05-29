@@ -57,6 +57,9 @@ void check_collision()
 
 bool on_collision(CollisionShape* shape1, CollisionShape* shape2)
 {
+    CollisionPack& collision = shape1->object->collision;
+    collision.reset();
+
     Vector2 pos1 = shape1->get_position();
     Vector2 pos2 = shape2->get_position();
 
@@ -66,8 +69,6 @@ bool on_collision(CollisionShape* shape1, CollisionShape* shape2)
     if (pos2.y + shape2->_size.y < pos1.y) return false;
 
 
-    CollisionPack& collision = shape1->object->collision;
-    collision.reset();
     collision.object = shape2->object;
     collision.is_collision = true;
 
@@ -83,12 +84,12 @@ bool on_collision(CollisionShape* shape1, CollisionShape* shape2)
     }
     if (pos1.y < pos2.y)
     {
-        collision.direct.y--;
+        collision.direct.y++;
         collision.distance.y = pos1.y + shape1->_size.y - pos2.y;
     }
     else
     {
-        collision.direct.y++;
+        collision.direct.y--;
         collision.distance.y = pos2.y + shape2->_size.y - pos1.y;
     }
 

@@ -20,7 +20,7 @@ void test_scene_root::setup()
     backg->fix_to_size(Vector2(720, 720));
     add_child(backg);
 
-    player = new CollisionObject();
+    player = new KinematicBody();
     player->name = "Player";
     player->position = Vector2(20, 100);
     add_child(player);
@@ -94,7 +94,10 @@ void test_scene_root::_physics_process()
     direction = direction.normalize();
     direction *= 3;
 
-    player->position += direction;
+
+    // Move and slide
+    player->move_and_slide(direction);
+
 }
 
 
@@ -105,15 +108,15 @@ void test_scene_root::go()
 
 void test_scene_root::dance()
 {
-    cout << "Dance till we die\n";
     CollisionPack& collision = player->collision;
     cout << "Direct: " << collision.direct.x << " " << collision.direct.y << "\n";
     cout << "Distance: " << collision.distance.x << " " << collision.distance.y << "\n";
     cout << "Object: " << collision.object->name << "\n";
+    if (player->collision.direct != Vector2().UP) cout << "NOT Collide UP\n";
 }
 
 void test_scene_root::stop()
 {
-    cout << "Stop please\n";
+    cout << "Stop\n";
 }
 

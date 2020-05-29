@@ -4,9 +4,9 @@
 
 Vector2 Vector2::ZERO   = Vector2(0.0, 0.0);
 Vector2 Vector2::ONE    = Vector2(1.0, 1.0);
-Vector2 Vector2::UP     = Vector2(0.0, 1.0);
+Vector2 Vector2::UP     = Vector2(0.0, -1.0);
 Vector2 Vector2::LEFT   = Vector2(-1.0, 0.0);
-Vector2 Vector2::DOWN   = Vector2(0.0, -1.0);
+Vector2 Vector2::DOWN   = Vector2(0.0, 1.0);
 Vector2 Vector2::RIGHT  = Vector2(1.0, 0.0);
 
 
@@ -76,6 +76,22 @@ void Vector2::operator/=(const float& _number)
 }
 
 
+bool Vector2::operator==(const Vector2& _vector2)
+{
+    return (this->x == _vector2.x && this->y == _vector2.y);
+}
+
+bool Vector2::operator!=(const Vector2& _vector2)
+{
+    return (this->x != _vector2.x || this->y != _vector2.y);
+}
+
+
+
+Vector2 Vector2::bounce(const float& amount)
+{
+    return ((*this * -1.0) * amount);
+}
 
 float Vector2::dot(const Vector2& _vector2)
 {
