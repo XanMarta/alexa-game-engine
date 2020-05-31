@@ -1,0 +1,126 @@
+===============================================================================================================
+===============================================================================================================
+                                    TUTORIAL ABOUT ALEXA GAME ENGINE
+                1. SETUP
+                2. USE
+
+===============================================================================================================
+===============================================================================================================
+                                        CLASS
+
+    .   Node
+    .   .   CanvasItem
+    .   .   .   CollisionObject
+    .   .   .   .   KinematicBody
+    .   .   .   Sprite
+    .   .   AnimationPlayer
+    .
+    .   Scene
+
+
+===============================================================================================================
+===============================================================================================================
+
+                                        MENU
+
+        ANIMATION PLAYER
+        SIGNAL
+        SPRITE
+        COLLISION SHAPE
+
+
+===============================================================================================================
+===============================================================================================================
+
+                                    ANIMATION PLAYER
+        1. Setup
+
+animate = new AnimationPlayer();
+animate->name = "Animation";
+    AnimationPack bounce;
+    bounce.length = 2.0;
+    bounce.repeat = true;
+        //
+        AnimationTrack track1;
+        track1.variable = &player->position.y;
+        track1.add_node(0, 100);
+        track1.add_node(0.5, 50);
+        track1.add_node(1.5, 150);
+        track1.add_node(2, 100);
+        bounce.add_track(track1);
+        //
+        AnimationTrack track2;
+        track2.variable = &player->scale.x;
+        track2.add_node(0, 1);
+        track2.add_node(0.5, 0.1);
+        track2.add_node(1.5, 2);
+        track2.add_node(2, 1);
+        bounce.add_track(track2);
+        //
+animate->add_animation(bounce, "bounce");
+animate->set_animation("bounce");
+add_child(animate);
+
+        2. Use
+
+animate->start();
+
+===============================================================================================================
+===============================================================================================================
+
+                                    SIGNAL
+
+        1. Setup
+
+        2. Use
+
+void test_scene_root::_ready()                                  // Connect
+{
+    test->connect_signal("run", this);
+    connect_signal("bom", test);
+    player->connect_signal("on_just_collision", this);
+    player->connect_signal("on_just_not_collision", this);
+}
+
+emit_signal("animation_start");                                 // Emit
+
+void test_scene_root::execute_signal(string signal_name)        // Use
+{
+    if (signal_name == "run") go();
+    else if (signal_name == "on_just_collision") dance();
+    else if (signal_name == "on_just_not_collision") stop();
+}
+
+===============================================================================================================
+===============================================================================================================
+
+                                    SPRITE
+        1. Setup
+
+sprite1 = new Sprite();
+sprite1->name = "sprite1";
+sprite1->image = COIN;                  // Need to load image first
+sprite1->scale = Vector2(0.2, 0.2);
+player->add_child(sprite1);
+
+        2. Use
+
+===============================================================================================================
+===============================================================================================================
+
+                                COLLISION SHAPE
+        1. Setup
+
+player_collision = new CollisionShape();
+player_collision->name = "player_collision";
+player_collision->layer.push_back(PLAYER);          // Where the object in
+player_collision->mask.push_back(WALL);             // What the object collide with
+player_collision->_size = Vector2(65, 65);
+player->add_child(player_collision);
+player->set_collision_shape(player_collision);
+
+        2. Use
+
+===============================================================================================================
+===============================================================================================================
+

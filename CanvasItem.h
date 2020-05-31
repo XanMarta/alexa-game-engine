@@ -8,7 +8,7 @@ class CanvasItem : public Node
 {
     public:
 
-        int alpha = 255;
+        float alpha = 255;
 
         void show();
         void hide();

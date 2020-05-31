@@ -26,19 +26,24 @@ void AnimationPlayer::start()
     else start_time = get_time();
 
     is_running = true;
+    is_pause = false;
     emit_signal("animation_start");
 }
 
 void AnimationPlayer::pause()
 {
-    pause_time = get_time() - start_time;
-    is_pause = true;
-    is_running = false;
+    if (!is_pause)
+    {
+        pause_time = get_time() - start_time;
+        is_pause = true;
+        is_running = false;
+    }
 }
 
 void AnimationPlayer::stop()
 {
     is_running = false;
+    is_pause = false;
     emit_signal("animation_end");
 }
 
@@ -49,7 +54,7 @@ void AnimationPlayer::_physics_process()
     {
         if (current != NULL)
         {
-            float time = (get_time() - start_time) / 1000;
+            float time = (get_time() - start_time) / 1000.0;
             current->update(time);
 
             if (current->is_end)

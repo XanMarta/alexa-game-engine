@@ -5,6 +5,8 @@
 #include "Sprite.h"
 #include "CollisionObject.h"
 #include "KinematicBody.h"
+#include "AnimationPlayer.h"
+
 
 class test_scene_2 : public Node
 {
@@ -30,6 +32,7 @@ class test_scene_root : public Node
         CollisionObject* ball;
             CollisionShape* ball_collision;
         test_scene_2* test;
+        AnimationPlayer* animate;
 
 
         void _ready();

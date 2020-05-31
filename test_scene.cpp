@@ -55,6 +55,31 @@ void test_scene_root::setup()
     test = new test_scene_2();
     test->name = "test";
     add_child(test);
+
+    animate = new AnimationPlayer();
+    animate->name = "Animation";
+        AnimationPack bounce;
+        bounce.length = 2.0;
+        bounce.repeat = true;
+            //
+            AnimationTrack track1;
+            track1.variable = &player->position.y;
+            track1.add_node(0, 100);
+            track1.add_node(0.5, 50);
+            track1.add_node(1.5, 150);
+            track1.add_node(2, 100);
+            bounce.add_track(track1);
+            //
+            AnimationTrack track2;
+            track2.variable = &player->scale.x;
+            track2.add_node(0, 1);
+            track2.add_node(0.5, 0.1);
+            track2.add_node(1.5, 2);
+            track2.add_node(2, 1);
+            bounce.add_track(track2);
+    animate->add_animation(bounce, "bounce");
+    animate->set_animation("bounce");
+    add_child(animate);
 }
 
 // ==============================================
@@ -88,13 +113,29 @@ void test_scene_root::_ready()
 
 void test_scene_root::_physics_process()
 {
-    Vector2 direction;
-    direction.x = Input.get_action_length(MOVE_RIGHT) - Input.get_action_length(MOVE_LEFT);
-    direction.y = Input.get_action_length(MOVE_DOWN) - Input.get_action_length(MOVE_UP);
-    direction = direction.normalize();
-    direction *= 3;
+//    Vector2 direction;
+//    direction.x = Input.get_action_length(MOVE_RIGHT) - Input.get_action_length(MOVE_LEFT);
+//    direction.y = Input.get_action_length(MOVE_DOWN) - Input.get_action_length(MOVE_UP);
+//    direction = direction.normalize();
+//    direction *= 3;
+//
+//    player->move_and_slide(direction);
 
-    player->move_and_slide(direction);
+    if (Input.is_just_pressed(MOVE_UP))
+    {
+        animate->start();
+        cout << "Start\n";
+    }
+    if (Input.is_just_pressed(MOVE_DOWN))
+    {
+        animate->stop();
+        cout << "Stop\n";
+    }
+    if (Input.is_just_pressed(MOVE_LEFT))
+    {
+        animate->pause();
+        cout << "Pause\n";
+    }
 
     if (Input.is_just_pressed(BUTTON_CONSOLE)) show_tree();
 }

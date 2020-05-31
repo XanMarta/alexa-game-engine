@@ -113,6 +113,9 @@
 		<Unit filename="Sprite.h">
 			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/Sprite/" />
 		</Unit>
+		<Unit filename="TUTORIAL.txt">
+			<Option virtualFolder="README/" />
+		</Unit>
 		<Unit filename="Vector2.cpp">
 			<Option virtualFolder="GAME ENGINE/Assisstant/Vector2/" />
 		</Unit>

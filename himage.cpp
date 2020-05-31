@@ -36,7 +36,7 @@ void image_pack::render(const Vector2& position)
     SDL_RenderCopyEx(gRenderer, texture, NULL, &rect, rotation, NULL, flip);
 }
 
-void image_pack::render(const Vector2& position, const Vector2& scale, const int& alpha)
+void image_pack::render(const Vector2& position, const Vector2& scale, const float& alpha)
 {
     SDL_SetTextureAlphaMod(texture, alpha);
     SDL_Rect rect = {position.x, position.y, _size.x * scale.x, _size.y * scale.y};
