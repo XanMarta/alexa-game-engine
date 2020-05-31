@@ -7,6 +7,7 @@ void input_pack::init_input()
     key[KEY_W].set_key(SDL_SCANCODE_W);
     key[KEY_S].set_key(SDL_SCANCODE_S);
     key[KEY_D].set_key(SDL_SCANCODE_D);
+    key[KEY_P].set_key(SDL_SCANCODE_P);
 
     init_action();
 }
@@ -34,6 +35,8 @@ void input_pack::init_action()
 
     action[MOVE_RIGHT]._key.push_back(KEY_D);
     action[MOVE_UP]._key.push_back(KEY_RIGHT);
+
+    action[BUTTON_CONSOLE]._key.push_back(KEY_P);
 
     action[MOUSE_C]._mouse = true;
 }

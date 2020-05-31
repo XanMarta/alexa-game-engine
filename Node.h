@@ -52,6 +52,10 @@ class Node : public Node_Base
         Vector2 get_position();
         Vector2 get_scale();
 
+        // Debug method
+
+        void show_tree(int number = 1);
+
     private:
 
         map<string, SignalPack> signal;

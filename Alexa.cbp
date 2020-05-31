@@ -5,7 +5,7 @@
 		<Option title="Alexa" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Console\;Assisstant\;Assisstant\;Console\Window\;Assisstant\;Console\Sdl\;Assisstant\;Console\$ Base $\;Assisstant\;Console\Image\;Assisstant\;Console\Input\;Assisstant\;Console\Input\$ Base $\;Assisstant\;Console\Input\Keyboard\;Assisstant\;Console\Input\Mouse\;Assisstant\;Console\Input\Action\;Assisstant\;Console\$ Base $\;Assisstant\Vector2\;Element\Node\;README\;Element\;Data\;Data\Image\;Element\Node\zz Node\;Element\zz Element\;Data\zz Data\;Console\zz Console\;Console\Input\zz Input\;Element\Scene\;Scene\;Element\Node\CanvasItem\;Element\Node\CanvasItem\zz CanvasItem\;Element\Node\CanvasItem\Sprite\;Element\Node\CanvasItem\CollisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\;Element\Node\CanvasItem\CollisionObject\zz ColisionObject\$ Base $\;Element\Node\CanvasItem\CollisionObject\KinematicBody\;" />
+		<Option virtualFolders="GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\Vector2\;GAME ENGINE\;GAME ENGINE\Console\Sdl\;GAME ENGINE\Console\Input\zz Input\;GAME ENGINE\Console\Image\;GAME ENGINE\Console\Window\;GAME ENGINE\Element\Node\CanvasItem\zz CanvasItem\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\KinematicBody\;GAME ENGINE\Console\zz Console\;GAME ENGINE\Console\$ Base $\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\zz ColisionObject\$ Base $\;GAME ENGINE\Console\Input\Keyboard\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\zz ColisionObject\;GAME ENGINE\Console\Input\Mouse\;GAME ENGINE\Element\Node\zz Node\;GAME ENGINE\Console\Input\$ Base $\;Scene\;README\;GAME ENGINE\Element\Node\CanvasItem\Sprite\;GAME ENGINE\Element\zz Element\;GAME ENGINE\Element\Scene\;GAME ENGINE\Data\Image\;GAME ENGINE\Console\Input\Action\;GAME ENGINE\Data\zz Data\;GAME ENGINE\Element\Node\AnimationPlayer\;GAME ENGINE\Element\Node\AnimationPlayer\Base\;GAME ENGINE\Element\Other\;GAME ENGINE\Element\Other\Bone1D\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
@@ -47,140 +47,158 @@
 		<ExtraCommands>
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
+		<Unit filename="AnimationPack.cpp">
+			<Option virtualFolder="GAME ENGINE/Element/Node/AnimationPlayer/Base/" />
+		</Unit>
+		<Unit filename="AnimationPack.h">
+			<Option virtualFolder="GAME ENGINE/Element/Node/AnimationPlayer/Base/" />
+		</Unit>
+		<Unit filename="AnimationPlayer.cpp">
+			<Option virtualFolder="GAME ENGINE/Element/Node/AnimationPlayer/" />
+		</Unit>
+		<Unit filename="AnimationPlayer.h">
+			<Option virtualFolder="GAME ENGINE/Element/Node/AnimationPlayer/" />
+		</Unit>
+		<Unit filename="Bone1D.cpp">
+			<Option virtualFolder="GAME ENGINE/Element/Other/Bone1D/" />
+		</Unit>
+		<Unit filename="Bone1D.h">
+			<Option virtualFolder="GAME ENGINE/Element/Other/Bone1D/" />
+		</Unit>
 		<Unit filename="CanvasItem.cpp">
-			<Option virtualFolder="Element/Node/CanvasItem/zz CanvasItem/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/zz CanvasItem/" />
 		</Unit>
 		<Unit filename="CanvasItem.h">
-			<Option virtualFolder="Element/Node/CanvasItem/zz CanvasItem/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/zz CanvasItem/" />
 		</Unit>
 		<Unit filename="CollisionBase.cpp">
-			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/$ Base $/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/CollisionObject/zz ColisionObject/$ Base $/" />
 		</Unit>
 		<Unit filename="CollisionBase.h">
-			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/$ Base $/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/CollisionObject/zz ColisionObject/$ Base $/" />
 		</Unit>
 		<Unit filename="CollisionObject.cpp">
-			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/CollisionObject/zz ColisionObject/" />
 		</Unit>
 		<Unit filename="CollisionObject.h">
-			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/zz ColisionObject/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/CollisionObject/zz ColisionObject/" />
 		</Unit>
 		<Unit filename="KinematicBody.cpp">
-			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/KinematicBody/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/CollisionObject/KinematicBody/" />
 		</Unit>
 		<Unit filename="KinematicBody.h">
-			<Option virtualFolder="Element/Node/CanvasItem/CollisionObject/KinematicBody/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/CollisionObject/KinematicBody/" />
 		</Unit>
 		<Unit filename="Node.cpp">
-			<Option virtualFolder="Element/Node/zz Node/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/zz Node/" />
 		</Unit>
 		<Unit filename="Node.h">
-			<Option virtualFolder="Element/Node/zz Node/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/zz Node/" />
 		</Unit>
 		<Unit filename="Node_Base.h">
-			<Option virtualFolder="Element/Node/zz Node/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/zz Node/" />
 		</Unit>
 		<Unit filename="README.txt">
 			<Option virtualFolder="README/" />
 		</Unit>
 		<Unit filename="Scene.cpp">
-			<Option virtualFolder="Element/Scene/" />
+			<Option virtualFolder="GAME ENGINE/Element/Scene/" />
 		</Unit>
 		<Unit filename="Scene.h">
-			<Option virtualFolder="Element/Scene/" />
+			<Option virtualFolder="GAME ENGINE/Element/Scene/" />
 		</Unit>
 		<Unit filename="Sprite.cpp">
-			<Option virtualFolder="Element/Node/CanvasItem/Sprite/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/Sprite/" />
 		</Unit>
 		<Unit filename="Sprite.h">
-			<Option virtualFolder="Element/Node/CanvasItem/Sprite/" />
+			<Option virtualFolder="GAME ENGINE/Element/Node/CanvasItem/Sprite/" />
 		</Unit>
 		<Unit filename="Vector2.cpp">
-			<Option virtualFolder="Assisstant/Vector2/" />
+			<Option virtualFolder="GAME ENGINE/Assisstant/Vector2/" />
 		</Unit>
 		<Unit filename="Vector2.h">
-			<Option virtualFolder="Assisstant/Vector2/" />
+			<Option virtualFolder="GAME ENGINE/Assisstant/Vector2/" />
 		</Unit>
 		<Unit filename="ddata.cpp">
-			<Option virtualFolder="Data/zz Data/" />
+			<Option virtualFolder="GAME ENGINE/Data/zz Data/" />
 		</Unit>
 		<Unit filename="ddata.h">
-			<Option virtualFolder="Data/zz Data/" />
+			<Option virtualFolder="GAME ENGINE/Data/zz Data/" />
 		</Unit>
 		<Unit filename="dimage.cpp">
-			<Option virtualFolder="Data/Image/" />
+			<Option virtualFolder="GAME ENGINE/Data/Image/" />
 		</Unit>
 		<Unit filename="dimage.h">
-			<Option virtualFolder="Data/Image/" />
+			<Option virtualFolder="GAME ENGINE/Data/Image/" />
 		</Unit>
 		<Unit filename="eelement.cpp">
-			<Option virtualFolder="Element/zz Element/" />
+			<Option virtualFolder="GAME ENGINE/Element/zz Element/" />
 		</Unit>
 		<Unit filename="eelement.h">
-			<Option virtualFolder="Element/zz Element/" />
+			<Option virtualFolder="GAME ENGINE/Element/zz Element/" />
 		</Unit>
 		<Unit filename="haction.cpp">
-			<Option virtualFolder="Console/Input/Action/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/Action/" />
 		</Unit>
 		<Unit filename="haction.h">
-			<Option virtualFolder="Console/Input/Action/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/Action/" />
 		</Unit>
 		<Unit filename="hbase.cpp">
-			<Option virtualFolder="Console/$ Base $/" />
+			<Option virtualFolder="GAME ENGINE/Console/$ Base $/" />
 		</Unit>
 		<Unit filename="hbase.h">
-			<Option virtualFolder="Console/$ Base $/" />
+			<Option virtualFolder="GAME ENGINE/Console/$ Base $/" />
 		</Unit>
 		<Unit filename="hbase_input.cpp">
-			<Option virtualFolder="Console/Input/$ Base $/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/$ Base $/" />
 		</Unit>
 		<Unit filename="hbase_input.h">
-			<Option virtualFolder="Console/Input/$ Base $/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/$ Base $/" />
 		</Unit>
 		<Unit filename="hconsole.cpp">
-			<Option virtualFolder="Console/zz Console/" />
+			<Option virtualFolder="GAME ENGINE/Console/zz Console/" />
 		</Unit>
 		<Unit filename="hconsole.h">
-			<Option virtualFolder="Console/zz Console/" />
+			<Option virtualFolder="GAME ENGINE/Console/zz Console/" />
 		</Unit>
 		<Unit filename="hheader.h">
-			<Option virtualFolder="Assisstant/" />
+			<Option virtualFolder="GAME ENGINE/Assisstant/" />
 		</Unit>
 		<Unit filename="himage.cpp">
-			<Option virtualFolder="Console/Image/" />
+			<Option virtualFolder="GAME ENGINE/Console/Image/" />
 		</Unit>
 		<Unit filename="himage.h">
-			<Option virtualFolder="Console/Image/" />
+			<Option virtualFolder="GAME ENGINE/Console/Image/" />
 		</Unit>
 		<Unit filename="hinput.cpp">
-			<Option virtualFolder="Console/Input/zz Input/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/zz Input/" />
 		</Unit>
 		<Unit filename="hinput.h">
-			<Option virtualFolder="Console/Input/zz Input/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/zz Input/" />
 		</Unit>
 		<Unit filename="hkey.cpp">
-			<Option virtualFolder="Console/Input/Keyboard/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/Keyboard/" />
 		</Unit>
 		<Unit filename="hkey.h">
-			<Option virtualFolder="Console/Input/Keyboard/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/Keyboard/" />
 		</Unit>
 		<Unit filename="hmouse.cpp">
-			<Option virtualFolder="Console/Input/Mouse/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/Mouse/" />
 		</Unit>
 		<Unit filename="hmouse.h">
-			<Option virtualFolder="Console/Input/Mouse/" />
+			<Option virtualFolder="GAME ENGINE/Console/Input/Mouse/" />
 		</Unit>
 		<Unit filename="hsdl.cpp">
-			<Option virtualFolder="Console/Sdl/" />
+			<Option virtualFolder="GAME ENGINE/Console/Sdl/" />
 		</Unit>
 		<Unit filename="hsdl.h">
-			<Option virtualFolder="Console/Sdl/" />
+			<Option virtualFolder="GAME ENGINE/Console/Sdl/" />
 		</Unit>
 		<Unit filename="hwindow.cpp">
-			<Option virtualFolder="Console/Window/" />
+			<Option virtualFolder="GAME ENGINE/Console/Window/" />
 		</Unit>
 		<Unit filename="hwindow.h">
-			<Option virtualFolder="Console/Window/" />
+			<Option virtualFolder="GAME ENGINE/Console/Window/" />
 		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="test_scene.cpp">

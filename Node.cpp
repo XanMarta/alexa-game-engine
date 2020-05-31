@@ -138,6 +138,19 @@ Vector2 Node::get_scale()
 }
 
 
+
+void Node::show_tree(int number)
+{
+    cout << number;
+    for (int i = 1; i <= number; i++) cout << "   .";
+    cout << name << "\n";
+    for (int i = 0; i < child.size(); i++)
+    {
+        child[i]->show_tree(number + 1);
+    }
+}
+
+
 // ===========================================================
 
 void SignalPack::emit(string signal_name)

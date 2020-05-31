@@ -94,10 +94,9 @@ void test_scene_root::_physics_process()
     direction = direction.normalize();
     direction *= 3;
 
-
-    // Move and slide
     player->move_and_slide(direction);
 
+    if (Input.is_just_pressed(BUTTON_CONSOLE)) show_tree();
 }
 
 

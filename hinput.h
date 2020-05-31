@@ -7,6 +7,7 @@
 enum action_type
 {
     MOVE_UP, MOVE_LEFT, MOVE_DOWN, MOVE_RIGHT,
+    BUTTON_CONSOLE,
     MOUSE_C,
     TOTAL_ACTION
 };
