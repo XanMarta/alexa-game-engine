@@ -52,6 +52,7 @@ void Scene::process_phase()
 
 void Scene::render_phase()
 {
+    show_render();
     show_image();
 }
 

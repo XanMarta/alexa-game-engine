@@ -6,12 +6,7 @@ void Sprite::fix_to_size(Vector2 new_size)
     scale = new_size / image_data[image].get_size();
 }
 
-void Sprite::render()
-{
-    image_data[image].render(get_position(), get_scale(), alpha);
-}
-
 void Sprite::_physics_process()
 {
-    if (is_showing) render();
+    if (is_showing) update_render(layer, image, get_position(), get_scale());
 }

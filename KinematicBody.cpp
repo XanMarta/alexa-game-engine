@@ -9,12 +9,16 @@ void KinematicBody::move_and_collide(const Vector2& velocity)
     }
     else
     {
-        position -= collision.distance * collision.direct;
+        if (!collision.object->is_static_body) position += velocity;
+        else position -= collision.distance * collision.direct;
     }
 }
 
 void KinematicBody::move_and_slide(const Vector2& velocity)
 {
     position += velocity;
-    position -= collision.distance * collision.direct;
+    if (collision.is_collision)
+    {
+        if (collision.object->is_static_body) position -= collision.distance * collision.direct;
+    }
 }

@@ -2,7 +2,7 @@
 #define SPRITE_H_INCLUDED
 
 #include "CanvasItem.h"
-#include "dimage.h"
+#include "RenderPack.h"
 
 
 class Sprite : public CanvasItem

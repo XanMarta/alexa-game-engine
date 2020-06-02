@@ -1,5 +1,5 @@
 #include "CollisionObject.h"
-#include "himage.h"
+#include "RenderPack.h"
 
 bool show_collision = true;
 
@@ -32,8 +32,7 @@ void CollisionShape::_physics_process()
     update_collision(this);
     if (show_collision)
     {
-        Vector2 pos = get_position();
-        draw_rectangle({pos.x, pos.y, _size.x, _size.y}, {0x00, 0x00, 0xFF});
+        update_render_collision(get_position(), _size);
     }
 }
 

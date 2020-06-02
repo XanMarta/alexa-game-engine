@@ -20,6 +20,7 @@ class image_pack
 
         bool load_image(string path);
         void render(const Vector2& position);
+        void render(const Vector2& position, const Vector2& scale);
         void render(const Vector2& position, const Vector2& scale, const float& alpha);
         void render(const SDL_Rect& area);
 
@@ -38,7 +39,7 @@ class image_pack
 
 // =================================================
 
-void draw_rectangle(SDL_Rect rect, SDL_Color color = {0xFF, 0xFF, 0xFF});
+void draw_rectangle(SDL_Rect rect, SDL_Color color = {0xFF, 0xFF, 0xFF}, float alpha = 255.0);
 void clear_screen(SDL_Color color = {0xFF, 0xFF, 0xFF});
 
 #endif // HIMAGE_H_INCLUDED

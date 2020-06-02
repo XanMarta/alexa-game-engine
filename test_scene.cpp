@@ -80,6 +80,12 @@ void test_scene_root::setup()
     animate->add_animation(bounce, "bounce");
     animate->set_animation("bounce");
     add_child(animate);
+
+    timer = new Timer();
+    timer->name = "timer";
+    timer->wait_time = 1.5;
+    timer->repeat = true;
+    add_child(timer);
 }
 
 // ==============================================
@@ -98,7 +104,7 @@ void test_scene_2::execute_signal(string signal_name)
 
 void test_scene_root::execute_signal(string signal_name)
 {
-    if (signal_name == "run") go();
+    if (signal_name == "timeout") go();
     else if (signal_name == "on_just_collision") dance();
     else if (signal_name == "on_just_not_collision") stop();
 }
@@ -109,33 +115,20 @@ void test_scene_root::_ready()
     connect_signal("bom", test);
     player->connect_signal("on_just_collision", this);
     player->connect_signal("on_just_not_collision", this);
+    timer->connect_signal("timeout", this);
+//    set_camera({0, 0, 360, 360});
 }
 
 void test_scene_root::_physics_process()
 {
-//    Vector2 direction;
-//    direction.x = Input.get_action_length(MOVE_RIGHT) - Input.get_action_length(MOVE_LEFT);
-//    direction.y = Input.get_action_length(MOVE_DOWN) - Input.get_action_length(MOVE_UP);
-//    direction = direction.normalize();
-//    direction *= 3;
-//
-//    player->move_and_slide(direction);
+    Vector2 direction;
+    direction.x = Input.get_action_length(MOVE_RIGHT) - Input.get_action_length(MOVE_LEFT);
+    direction.y = Input.get_action_length(MOVE_DOWN) - Input.get_action_length(MOVE_UP);
+    direction = direction.normalize();
+    direction *= 3;
 
-    if (Input.is_just_pressed(MOVE_UP))
-    {
-        animate->start();
-        cout << "Start\n";
-    }
-    if (Input.is_just_pressed(MOVE_DOWN))
-    {
-        animate->stop();
-        cout << "Stop\n";
-    }
-    if (Input.is_just_pressed(MOVE_LEFT))
-    {
-        animate->pause();
-        cout << "Pause\n";
-    }
+    player->move_and_slide(direction);
+
 
     if (Input.is_just_pressed(BUTTON_CONSOLE)) show_tree();
 }
@@ -143,7 +136,7 @@ void test_scene_root::_physics_process()
 
 void test_scene_root::go()
 {
-    cout << "\n";
+    cout << "Time out\n";
 }
 
 void test_scene_root::dance()

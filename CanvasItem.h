@@ -8,6 +8,8 @@ class CanvasItem : public Node
 {
     public:
 
+        int layer = 1;          // max layer: 20. Small layer will be drawn first
+
         float alpha = 255;
 
         void show();

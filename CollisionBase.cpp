@@ -30,12 +30,16 @@ void check_collision()
         for (int j = 0; j < layer[i].object.size(); j++)
         {
             CollisionShape* object_check = layer[i].object[j];
+            if (object_check->object->monitoring == false) continue;
+
             for (int k = 0; k < object_check->mask.size(); k++)
             {
                 Collision_Layer layer_check = object_check->mask[k];
                 for (int l = 0; l < layer[layer_check].object.size(); l++)
                 {
                     CollisionShape* object_checking = layer[layer_check].object[l];
+                    if (object_checking->object->monitorable == false) continue;
+
                     if (on_collision(object_check, object_checking))
                     {
                         object_check->object->check_collide(true);

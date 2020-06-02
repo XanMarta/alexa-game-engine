@@ -6,6 +6,7 @@
 #include "CollisionObject.h"
 #include "KinematicBody.h"
 #include "AnimationPlayer.h"
+#include "Timer.h"
 
 
 class test_scene_2 : public Node
@@ -33,6 +34,7 @@ class test_scene_root : public Node
             CollisionShape* ball_collision;
         test_scene_2* test;
         AnimationPlayer* animate;
+        Timer* timer;
 
 
         void _ready();

@@ -7,7 +7,7 @@
 /*
     CollisionObject
         object to check to collision with another object
-        Need CollisionShape as its child
+        Need a CollisionShape node as its child
 
     Signal:
         on_just_collision
@@ -44,9 +44,13 @@ class CollisionObject : public CanvasItem
         CollisionPack collision;
 
 
+        bool monitorable = true;    // Other can detect this
+        bool monitoring = true;     // This can detect other
+
+        bool is_static_body = true;    // if true, collisionobject that collide with this can't go through this
+
 
         void set_collision_shape(CollisionShape* shape);    // Must be called on ready
-
 
         void check_collide(bool is_collide);
 
