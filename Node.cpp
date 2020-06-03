@@ -20,6 +20,7 @@ void Node::add_child(Node* new_child)
 {
     child.push_back(new_child);
     new_child->parent = this;
+    new_child->enter_tree();
 }
 
 Node* Node::get_child(string name)
@@ -62,7 +63,11 @@ void Node::free()
     {
         parent->free_child(this->name);
     }
-    else delete this;
+    else
+    {
+        exit_tree();
+        delete this;
+    }
 }
 
 void Node::free_child(string name)
@@ -72,6 +77,7 @@ void Node::free_child(string name)
         for (int i = 0; i < child.size(); i++)
         {
             child[i]->free_child();
+            child[i]->exit_tree();
             delete child[i];
             child[i] = NULL;
         }
@@ -84,6 +90,7 @@ void Node::free_child(string name)
             if (child[i]->name == name)
             {
                 child[i]->free_child();
+                child[i]->exit_tree();
                 delete child[i];
                 child[i] = NULL;
                 child.erase(child.begin() + i);
@@ -123,6 +130,16 @@ void Node::physics_process()
         child[i]->physics_process();
     }
     _physics_process();
+}
+
+void Node::enter_tree()
+{
+    _enter_tree();
+}
+
+void Node::exit_tree()
+{
+    _exit_tree();
 }
 
 Vector2 Node::get_position()

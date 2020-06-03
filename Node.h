@@ -16,7 +16,7 @@ class Node : public Node_Base
 
         // Variables
 
-        string name = "";
+        string name = "";           // Must be set in game. Each node has different name
 
         Node* parent = NULL;
         vector<Node*> child;
@@ -48,6 +48,8 @@ class Node : public Node_Base
         void ready();
         void process();
         void physics_process();
+        void enter_tree();
+        void exit_tree();
 
         Vector2 get_position();
         Vector2 get_scale();

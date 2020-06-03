@@ -14,9 +14,3 @@ bool init_window()
     }
     return true;
 }
-
-
-void set_camera(SDL_Rect rect)
-{
-    SDL_RenderSetClipRect(gRenderer, &rect);
-}

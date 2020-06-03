@@ -22,3 +22,10 @@ int random(int MIN, int MAX)
 {
 	return MIN + rand() % (MAX - MIN + 1);
 }
+
+float clamp(float value, float MIN, float MAX)
+{
+    if (value < MIN) return MIN;
+    if (value > MAX) return MAX;
+    return value;
+}

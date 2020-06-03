@@ -41,6 +41,8 @@ class test_scene_root : public Node
 
         void _ready();
         void _physics_process();
+        void _enter_tree();
+        void _exit_tree();
 
         void execute_signal(string signal_name);
 

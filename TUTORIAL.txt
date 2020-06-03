@@ -9,11 +9,13 @@
                                         CLASS
 
     .   Node
+    .   .   AnimationPlayer
     .   .   CanvasItem
     .   .   .   CollisionObject
     .   .   .   .   KinematicBody
     .   .   .   Sprite
-    .   .   AnimationPlayer
+    .   .   Timer
+    .
     .
     .   Scene
 

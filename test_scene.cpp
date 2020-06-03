@@ -5,7 +5,7 @@ void test_scene::setup()
 {
     test_scene_root* _root = new test_scene_root();
     _root->setup();
-    root = _root;
+    set_root(_root);
 }
 
 // ==============================================
@@ -128,7 +128,6 @@ void test_scene_root::_ready()
     timer->connect_signal("timeout", this);
 //    set_camera({0, 0, 360, 360});
 
-    Camera.position = Vector2(-50, -50);
 }
 
 void test_scene_root::_physics_process()
@@ -145,9 +144,18 @@ void test_scene_root::_physics_process()
     if (Input.is_just_pressed(BUTTON_CONSOLE)) show_tree();
     if (Input.is_just_pressed(MOUSE_C))
     {
-        Camera.zoom.x += 0.05;
-        Camera.zoom.y += 0.05;
+        default_camera_zoom += Vector2(0.05, 0.05);
     }
+}
+
+void test_scene_root::_enter_tree()
+{
+    cout << "Test scene root enter tree\n";
+}
+
+void test_scene_root::_exit_tree()
+{
+    cout << "Test scene root exit tree\n";
 }
 
 

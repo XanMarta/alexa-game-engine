@@ -20,6 +20,8 @@ class Scene
 
         Node* root = NULL;
 
+        void set_root(Node* root);
+
         void run();
         void close();
 

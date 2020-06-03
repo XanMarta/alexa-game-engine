@@ -30,5 +30,7 @@ void init_base();
 
 int random(int MIN, int MAX);
 
+float clamp(float value, float MIN, float MAX);
+
 
 #endif // HBASE_H_INCLUDED

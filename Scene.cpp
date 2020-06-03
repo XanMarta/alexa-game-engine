@@ -2,6 +2,12 @@
 #include "CollisionBase.h"
 
 
+void Scene::set_root(Node* root)
+{
+    this->root = root;
+    this->root->_enter_tree();
+}
+
 void Scene::run()
 {
     setup();
