@@ -18,8 +18,7 @@ class CameraPack
 
 
         void set_camera(Vector2* position, Vector2* zoom);
-
-    private:
+        void set_default();
 
         Vector2 _size = Vector2(SCREEN_WIDTH, SCREEN_HEIGHT);
 };

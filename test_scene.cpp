@@ -96,6 +96,12 @@ void test_scene_root::setup()
     timer->wait_time = 1.5;
     timer->repeat = true;
     add_child(timer);
+
+    cam = new Camera2D();
+    cam->name = "camera";
+    cam->set_camera(&player->position, player->get_position() - player->position + Vector2(50, 50));
+    cam->set_default_camera();
+    add_child(cam);
 }
 
 // ==============================================
@@ -141,10 +147,13 @@ void test_scene_root::_physics_process()
     player->move_and_slide(direction);
 
 
-    if (Input.is_just_pressed(BUTTON_CONSOLE)) show_tree();
-    if (Input.is_just_pressed(MOUSE_C))
+    if (Input.is_on_pressed(BUTTON_CONSOLE))
     {
-        default_camera_zoom += Vector2(0.05, 0.05);
+        cam->zoom -= Vector2(0.05, 0.05);
+    }
+    if (Input.is_on_pressed(MOUSE_C))
+    {
+        cam->zoom += Vector2(0.05, 0.05);
     }
 }
 

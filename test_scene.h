@@ -7,6 +7,7 @@
 #include "KinematicBody.h"
 #include "AnimationPlayer.h"
 #include "Timer.h"
+#include "Camera2D.h"
 
 
 class test_scene_2 : public Node
@@ -37,6 +38,8 @@ class test_scene_root : public Node
         test_scene_2* test;
         AnimationPlayer* animate;
         Timer* timer;
+        Camera2D* cam;
+
 
 
         void _ready();

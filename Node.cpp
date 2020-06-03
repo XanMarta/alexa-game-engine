@@ -107,29 +107,29 @@ void Node::free_child(string name)
 
 void Node::ready()
 {
+    _ready();
     for (int i = 0; i < child.size(); i++)
     {
         child[i]->ready();
     }
-    _ready();
 }
 
 void Node::process()
 {
+    _process();
     for (int i = 0; i < child.size(); i++)
     {
         child[i]->process();
     }
-    _process();
 }
 
 void Node::physics_process()
 {
+    _physics_process();
     for (int i = 0; i < child.size(); i++)
     {
         child[i]->physics_process();
     }
-    _physics_process();
 }
 
 void Node::enter_tree()
