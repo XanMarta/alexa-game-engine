@@ -27,11 +27,13 @@ class test_scene_root : public Node
     public:
 
         Sprite* backg;
-        KinematicBody* player;
-            CollisionShape* player_collision;
-            Sprite* sprite1;
+        Node* character;
+            KinematicBody* player;
+                CollisionShape* player_collision;
+                Sprite* sprite1;
         CollisionObject* ball;
             CollisionShape* ball_collision;
+            Sprite* wal;
         test_scene_2* test;
         AnimationPlayer* animate;
         Timer* timer;

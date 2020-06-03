@@ -15,7 +15,7 @@ RenderPack::RenderPack(const image_type& type, const Vector2& position, const Ve
 
 void RenderPack::render()
 {
-    image_data[type].render(position, scale);
+    image_data[type].render((position - Camera.position) * Camera.zoom, scale * Camera.zoom);
 }
 
 // ==================================================================================
@@ -43,7 +43,9 @@ RenderCollisionPack::RenderCollisionPack(const Vector2& position, const Vector2&
 
 void RenderCollisionPack::render()
 {
-    draw_rectangle({position.x, position.y, _size.x, _size.y}, {0x00, 0x00, 0xFF}, 50.0);
+    Vector2 draw_pos = (position - Camera.position) * Camera.zoom;
+    Vector2 draw_size = _size * Camera.zoom;
+    draw_rectangle({draw_pos.x, draw_pos.y, draw_size.x, draw_size.y}, {0x00, 0x00, 0xFF}, 50.0);
 }
 
 // ==================================================================================

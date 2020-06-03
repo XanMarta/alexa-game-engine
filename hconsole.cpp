@@ -2,6 +2,7 @@
 
 
 input_pack Input;
+CameraPack Camera;
 
 
 bool init_console()

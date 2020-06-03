@@ -20,37 +20,47 @@ void test_scene_root::setup()
     backg->fix_to_size(Vector2(720, 720));
     add_child(backg);
 
-    player = new KinematicBody();
-    player->name = "Player";
-    player->position = Vector2(20, 100);
-    add_child(player);
+    character = new Node();
+    character->position = Vector2(100, 50);
+    add_child(character);
 
-        player_collision = new CollisionShape();
-        player_collision->name = "player_collision";
-        player_collision->layer.push_back(PLAYER);
-        player_collision->mask.push_back(WALL);
-        player_collision->_size = Vector2(65, 65);
-        player->add_child(player_collision);
-        player->set_collision_shape(player_collision);
+        player = new KinematicBody();
+        player->name = "Player";
+        player->position = Vector2(20, 100);
+        character->add_child(player);
 
-        sprite1 = new Sprite();
-        sprite1->name = "sprite1";
-        sprite1->image = COIN;
-        sprite1->scale = Vector2(0.2, 0.2);
-        player->add_child(sprite1);
+            player_collision = new CollisionShape();
+            player_collision->name = "player_collision";
+            player_collision->layer.push_back(PLAYER);
+            player_collision->mask.push_back(WALL);
+            player_collision->_size = Vector2(65, 65);
+            player->add_child(player_collision);
+            player->set_collision_shape(player_collision);
+
+            sprite1 = new Sprite();
+            sprite1->name = "sprite1";
+            sprite1->image = COIN;
+            sprite1->scale = Vector2(0.2, 0.2);
+            player->add_child(sprite1);
 
     ball = new CollisionObject();
     ball->name = "Ball";
+    ball->position = Vector2(100, 100);
     add_child(ball);
 
         ball_collision = new CollisionShape();
         ball_collision->name = "ball_collision";
-        ball_collision->position = Vector2(100, 100);
         ball_collision->layer.push_back(WALL);
         ball_collision->mask.push_back(PLAYER);
         ball_collision->_size = Vector2(100, 100);
         ball->add_child(ball_collision);
         ball->set_collision_shape(ball_collision);
+
+        wal = new Sprite();
+        wal->name = "image wall";
+        wal->image = BACKGROUND;
+        wal->scale = Vector2(0.1, 0.1);
+        ball->add_child(wal);
 
     test = new test_scene_2();
     test->name = "test";
@@ -117,6 +127,8 @@ void test_scene_root::_ready()
     player->connect_signal("on_just_not_collision", this);
     timer->connect_signal("timeout", this);
 //    set_camera({0, 0, 360, 360});
+
+    Camera.position = Vector2(-50, -50);
 }
 
 void test_scene_root::_physics_process()
@@ -131,6 +143,11 @@ void test_scene_root::_physics_process()
 
 
     if (Input.is_just_pressed(BUTTON_CONSOLE)) show_tree();
+    if (Input.is_just_pressed(MOUSE_C))
+    {
+        Camera.zoom.x += 0.05;
+        Camera.zoom.y += 0.05;
+    }
 }
 
 

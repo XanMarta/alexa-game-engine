@@ -2,11 +2,10 @@
 #define RENDERPACK_H_INCLUDED
 
 
-#include <bits/stdc++.h>
-#include <vector>
+
 #include "dimage.h"
-#include "Vector2.h"
-using namespace std;
+#include "hconsole.h"
+
 
 
 const int RENDER_LAYER_MAX = 20;

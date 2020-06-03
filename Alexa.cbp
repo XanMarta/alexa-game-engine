@@ -5,7 +5,7 @@
 		<Option title="Alexa" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\Vector2\;GAME ENGINE\;GAME ENGINE\Console\Sdl\;GAME ENGINE\Console\Input\zz Input\;GAME ENGINE\Console\Image\;GAME ENGINE\Console\Window\;GAME ENGINE\Element\Node\CanvasItem\zz CanvasItem\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\KinematicBody\;GAME ENGINE\Console\zz Console\;GAME ENGINE\Console\$ Base $\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\zz ColisionObject\$ Base $\;GAME ENGINE\Console\Input\Keyboard\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\zz ColisionObject\;GAME ENGINE\Console\Input\Mouse\;GAME ENGINE\Element\Node\zz Node\;GAME ENGINE\Console\Input\$ Base $\;Scene\;README\;GAME ENGINE\Element\Node\CanvasItem\Sprite\;GAME ENGINE\Element\zz Element\;GAME ENGINE\Element\Scene\;GAME ENGINE\Data\Image\;GAME ENGINE\Console\Input\Action\;GAME ENGINE\Data\zz Data\;GAME ENGINE\Element\Node\AnimationPlayer\;GAME ENGINE\Element\Node\AnimationPlayer\Base\;GAME ENGINE\Element\Other\;GAME ENGINE\Element\Other\Bone1D\;GAME ENGINE\Element\Node\Timer\;GAME ENGINE\Element\Node\CanvasItem\;GAME ENGINE\Element\Node\CanvasItem\zz CanvasItem\RenderPack\;GAME ENGINE\Element\Other\RenderPack\;" />
+		<Option virtualFolders="GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\;GAME ENGINE\Assisstant\Vector2\;GAME ENGINE\;GAME ENGINE\Console\Sdl\;GAME ENGINE\Console\Input\zz Input\;GAME ENGINE\Console\Image\;GAME ENGINE\Console\Window\;GAME ENGINE\Element\Node\CanvasItem\zz CanvasItem\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\KinematicBody\;GAME ENGINE\Console\zz Console\;GAME ENGINE\Console\$ Base $\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\zz ColisionObject\$ Base $\;GAME ENGINE\Console\Input\Keyboard\;GAME ENGINE\Element\Node\CanvasItem\CollisionObject\zz ColisionObject\;GAME ENGINE\Console\Input\Mouse\;GAME ENGINE\Element\Node\zz Node\;GAME ENGINE\Console\Input\$ Base $\;Scene\;README\;GAME ENGINE\Element\Node\CanvasItem\Sprite\;GAME ENGINE\Element\zz Element\;GAME ENGINE\Element\Scene\;GAME ENGINE\Data\Image\;GAME ENGINE\Console\Input\Action\;GAME ENGINE\Data\zz Data\;GAME ENGINE\Element\Node\AnimationPlayer\;GAME ENGINE\Element\Node\AnimationPlayer\Base\;GAME ENGINE\Element\Other\;GAME ENGINE\Element\Other\Bone1D\;GAME ENGINE\Element\Node\Timer\;GAME ENGINE\Element\Node\CanvasItem\;GAME ENGINE\Element\Node\CanvasItem\zz CanvasItem\RenderPack\;GAME ENGINE\Element\Other\RenderPack\;GAME ENGINE\Console\Camera\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Alexa" prefix_auto="1" extension_auto="1" />
@@ -169,6 +169,12 @@
 		</Unit>
 		<Unit filename="hbase_input.h">
 			<Option virtualFolder="GAME ENGINE/Console/Input/$ Base $/" />
+		</Unit>
+		<Unit filename="hcamera.cpp">
+			<Option virtualFolder="GAME ENGINE/Console/Camera/" />
+		</Unit>
+		<Unit filename="hcamera.h">
+			<Option virtualFolder="GAME ENGINE/Console/Camera/" />
 		</Unit>
 		<Unit filename="hconsole.cpp">
 			<Option virtualFolder="GAME ENGINE/Console/zz Console/" />

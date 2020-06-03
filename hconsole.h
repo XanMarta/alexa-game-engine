@@ -5,10 +5,11 @@
 #include "hwindow.h"
 #include "himage.h"
 #include "hinput.h"
+#include "hcamera.h"
 
 
 extern input_pack Input;
-
+extern CameraPack Camera;
 
 
 bool init_console();
