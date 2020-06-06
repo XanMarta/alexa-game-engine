@@ -43,6 +43,11 @@ void test_scene_root::setup()
             sprite1->scale = Vector2(0.2, 0.2);
             player->add_child(sprite1);
 
+            visible_check = new VisibilityNotifier();
+            visible_check->name = "visible_check";
+            visible_check->_size = Vector2(65, 65);
+            player->add_child(visible_check);
+
     ball = new CollisionObject();
     ball->name = "Ball";
     ball->position = Vector2(100, 100);
@@ -107,11 +112,6 @@ void test_scene_root::setup()
     timer->repeat = true;
     add_child(timer);
 
-    cam = new Camera2D();
-    cam->name = "camera";
-    cam->set_camera(&player->position, player->get_position() - player->position + Vector2(50, 50));
-    cam->set_default_camera();
-    add_child(cam);
 }
 
 // ==============================================
@@ -132,7 +132,9 @@ void test_scene_root::execute_signal(string signal_name)
 {
     if (signal_name == "timeout") go();
     else if (signal_name == "on_just_collision") dance();
-    else if (signal_name == "on_just_not_collision") stop();
+    else if (signal_name == "on_just_not_collision") dance();
+    else if (signal_name == "screen_enter") go();
+    else if (signal_name == "screen_exit") stop();
 }
 
 void test_scene_root::_ready()
@@ -142,6 +144,8 @@ void test_scene_root::_ready()
     player->connect_signal("on_just_collision", this);
     player->connect_signal("on_just_not_collision", this);
     timer->connect_signal("timeout", this);
+    visible_check->connect_signal("screen_enter", this);
+    visible_check->connect_signal("screen_exit", this);
 //    set_camera({0, 0, 360, 360});
 
 }
@@ -159,9 +163,7 @@ void test_scene_root::_physics_process()
 
     if (Input.is_just_pressed(BUTTON_CONSOLE))
     {
-        sprite1->modulation.g -= 10;
-        sprite1->modulation.b -= 10;
-        cout << "Modulation r after: " << sprite1->modulation.r << "\n";
+        default_camera_zoom += Vector2(0.1, 0.1);
     }
     if (Input.is_just_pressed(MOUSE_C))
     {
@@ -182,20 +184,16 @@ void test_scene_root::_exit_tree()
 
 void test_scene_root::go()
 {
-    cout << "Time out\n";
+    cout << "Go function\n";
 }
 
 void test_scene_root::dance()
 {
-    CollisionPack& collision = player->collision;
-    cout << "Direct: " << collision.direct.x << " " << collision.direct.y << "\n";
-    cout << "Distance: " << collision.distance.x << " " << collision.distance.y << "\n";
-    cout << "Object: " << collision.object->name << "\n";
-    if (player->collision.direct != Vector2().UP) cout << "NOT Collide UP\n";
+
 }
 
 void test_scene_root::stop()
 {
-    cout << "Stop\n";
+    cout << "Stop function\n";
 }
 

@@ -87,6 +87,10 @@ bool Vector2::operator!=(const Vector2& _vector2)
 }
 
 
+Vector2 Vector2::power(const float& amount)
+{
+    return Vector2(pow(this->x, amount), pow(this->y, amount));
+}
 
 Vector2 Vector2::bounce(const float& amount)
 {

@@ -42,6 +42,8 @@ struct Vector2
     bool operator!=(const Vector2& _vector2);
 
 
+    Vector2 power(const float& amount);
+
     Vector2 bounce(const float& amount = 1.0);
     float dot(const Vector2& _vector2);
     float length();

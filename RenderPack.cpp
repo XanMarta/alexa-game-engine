@@ -36,17 +36,18 @@ void RenderLayerPack::render()
 
 // ==================================================================================
 
-RenderCollisionPack::RenderCollisionPack(const Vector2& position, const Vector2& _size)
+RenderCollisionPack::RenderCollisionPack(const Vector2& position, const Vector2& _size, const SDL_Color& color)
 {
     this->position = position;
     this->_size = _size;
+    this->color = color;
 }
 
 void RenderCollisionPack::render()
 {
     Vector2 draw_pos = (position - *Camera.position) * *Camera.zoom;
     Vector2 draw_size = _size * *Camera.zoom;
-    draw_rectangle({draw_pos.x, draw_pos.y, draw_size.x, draw_size.y}, {0x00, 0x00, 0xFF}, 50.0);
+    draw_rectangle({draw_pos.x, draw_pos.y, draw_size.x, draw_size.y}, color, 50.0);
 }
 
 // ==================================================================================
@@ -56,9 +57,9 @@ void update_render(int layer, const image_type& type, const Vector2& position, c
     _layer[layer].update(type, position, scale, modulation);
 }
 
-void update_render_collision(const Vector2& position, const Vector2& _size)
+void update_render_collision(const Vector2& position, const Vector2& _size, SDL_Color color)
 {
-    collision_render.push_back(RenderCollisionPack(position, _size));
+    collision_render.push_back(RenderCollisionPack(position, _size, color));
 }
 
 

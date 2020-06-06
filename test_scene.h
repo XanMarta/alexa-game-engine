@@ -8,6 +8,7 @@
 #include "AnimationPlayer.h"
 #include "Timer.h"
 #include "Camera2D.h"
+#include "VisibilityNotifier.h"
 
 
 class test_scene_2 : public Node
@@ -32,13 +33,14 @@ class test_scene_root : public Node
             KinematicBody* player;
                 CollisionShape* player_collision;
                 Sprite* sprite1;
+                VisibilityNotifier* visible_check;
         CollisionObject* ball;
             CollisionShape* ball_collision;
             Sprite* wal;
         test_scene_2* test;
         AnimationPlayer* animate;
         Timer* timer;
-        Camera2D* cam;
+
 
 
 
