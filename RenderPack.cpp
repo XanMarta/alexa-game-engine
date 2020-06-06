@@ -6,23 +6,24 @@ RenderLayerPack _layer[RENDER_LAYER_MAX + 5];
 vector<RenderCollisionPack> collision_render;
 
 
-RenderPack::RenderPack(const image_type& type, const Vector2& position, const Vector2& scale)
+RenderPack::RenderPack(const image_type& type, const Vector2& position, const Vector2& scale, const SDL_Color& modulation)
 {
     this->type = type;
     this->position = position;
     this->scale = scale;
+    this->modulation = modulation;
 }
 
 void RenderPack::render()
 {
-    image_data[type].render((position - *Camera.position) * *Camera.zoom, scale * *Camera.zoom);
+    image_data[type].render((position - *Camera.position) * *Camera.zoom, scale * *Camera.zoom, modulation);
 }
 
 // ==================================================================================
 
-void RenderLayerPack::update(const image_type& type, const Vector2& position, const Vector2& scale)
+void RenderLayerPack::update(const image_type& type, const Vector2& position, const Vector2& scale, const SDL_Color& modulation)
 {
-    pack.push_back(RenderPack(type, position, scale));
+    pack.push_back(RenderPack(type, position, scale, modulation));
 }
 
 void RenderLayerPack::render()
@@ -50,9 +51,9 @@ void RenderCollisionPack::render()
 
 // ==================================================================================
 
-void update_render(int layer, const image_type& type, const Vector2& position, const Vector2& scale)
+void update_render(int layer, const image_type& type, const Vector2& position, const Vector2& scale, const SDL_Color& modulation)
 {
-    _layer[layer].update(type, position, scale);
+    _layer[layer].update(type, position, scale, modulation);
 }
 
 void update_render_collision(const Vector2& position, const Vector2& _size)

@@ -87,6 +87,16 @@ void test_scene_root::setup()
             track2.add_node(1.5, 2);
             track2.add_node(2, 1);
             bounce.add_track(track2);
+        AnimationPack fade;
+        fade.length = 5.0;
+        fade.repeat = true;
+            //
+            AnimationTrack track3;
+            track3.variable = &sprite1->modulation.a;
+            track3.add_node(0, 255.0);
+            track3.add_node(5.0, 0);
+            fade.add_track(track3);
+    animate->add_animation(fade, "fade");
     animate->add_animation(bounce, "bounce");
     animate->set_animation("bounce");
     add_child(animate);
@@ -147,13 +157,15 @@ void test_scene_root::_physics_process()
     player->move_and_slide(direction);
 
 
-    if (Input.is_on_pressed(BUTTON_CONSOLE))
+    if (Input.is_just_pressed(BUTTON_CONSOLE))
     {
-        cam->zoom -= Vector2(0.05, 0.05);
+        sprite1->modulation.g -= 10;
+        sprite1->modulation.b -= 10;
+        cout << "Modulation r after: " << sprite1->modulation.r << "\n";
     }
-    if (Input.is_on_pressed(MOUSE_C))
+    if (Input.is_just_pressed(MOUSE_C))
     {
-        cam->zoom += Vector2(0.05, 0.05);
+        animate->play("fade");
     }
 }
 

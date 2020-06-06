@@ -13,11 +13,12 @@ const int RENDER_LAYER_MAX = 20;
 
 struct RenderPack
 {
-    RenderPack(const image_type& type, const Vector2& position, const Vector2& scale);
+    RenderPack(const image_type& type, const Vector2& position, const Vector2& scale, const SDL_Color& modulation);
 
     image_type type;
     Vector2 position;
     Vector2 scale;
+    SDL_Color modulation;
 
     void render();
 };
@@ -26,7 +27,7 @@ struct RenderLayerPack
 {
     vector<RenderPack> pack;
 
-    void update(const image_type& type, const Vector2& position, const Vector2& scale);
+    void update(const image_type& type, const Vector2& position, const Vector2& scale, const SDL_Color& modulation);
     void render();
 };
 
@@ -42,7 +43,7 @@ struct RenderCollisionPack
 
 // ==================================================================================
 
-void update_render(int layer, const image_type& type, const Vector2& position, const Vector2& scale);
+void update_render(int layer, const image_type& type, const Vector2& position, const Vector2& scale, const SDL_Color& modulation);
 void update_render_collision(const Vector2& position, const Vector2& _size);
 
 

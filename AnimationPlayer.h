@@ -21,6 +21,8 @@ class AnimationPlayer : public Node
         void add_animation(AnimationPack anim, string name);
         void set_animation(string name);
 
+        void play(string name);
+
         void start();
         void pause();
         void stop();

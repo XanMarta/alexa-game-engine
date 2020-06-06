@@ -10,6 +10,7 @@
 
     .   Node
     .   .   AnimationPlayer
+    .   .   Camera2D
     .   .   CanvasItem
     .   .   .   CollisionObject
     .   .   .   .   KinematicBody
@@ -29,6 +30,7 @@
         SIGNAL
         SPRITE
         COLLISION SHAPE
+        CAMERA 2D
 
 
 ===============================================================================================================
@@ -122,6 +124,22 @@ player->add_child(player_collision);
 player->set_collision_shape(player_collision);
 
         2. Use
+
+===============================================================================================================
+===============================================================================================================
+
+                                CAMERA 2D
+        1. Setup
+
+cam = new Camera2D();
+cam->name = "camera";
+cam->set_camera(&player->position, player->get_position() - player->position + Vector2(50, 50));
+cam->set_default_camera();
+add_child(cam);
+
+        2. Use
+
+cam->zoom -= Vector2(0.05, 0.05);
 
 ===============================================================================================================
 ===============================================================================================================

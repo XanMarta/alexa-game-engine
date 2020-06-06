@@ -20,6 +20,12 @@ void AnimationPlayer::set_animation(string name)
     }
 }
 
+void AnimationPlayer::play(string name)
+{
+    set_animation(name);
+    if (current != NULL) start();
+}
+
 void AnimationPlayer::start()
 {
     if (is_pause) start_time = get_time() - pause_time;
