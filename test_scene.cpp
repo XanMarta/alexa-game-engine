@@ -21,6 +21,7 @@ void test_scene_root::setup()
     add_child(backg);
 
     character = new Node();
+    character->name = "Character";
     character->position = Vector2(100, 50);
     add_child(character);
 
@@ -73,6 +74,7 @@ void test_scene_root::setup()
 
     animate = new AnimationPlayer();
     animate->name = "Animation";
+
         AnimationPack bounce;
         bounce.length = 2.0;
         bounce.repeat = true;
@@ -92,6 +94,7 @@ void test_scene_root::setup()
             track2.add_node(1.5, 2);
             track2.add_node(2, 1);
             bounce.add_track(track2);
+
         AnimationPack fade;
         fade.length = 5.0;
         fade.repeat = true;
@@ -101,6 +104,7 @@ void test_scene_root::setup()
             track3.add_node(0, 255.0);
             track3.add_node(5.0, 0);
             fade.add_track(track3);
+
     animate->add_animation(fade, "fade");
     animate->add_animation(bounce, "bounce");
     animate->set_animation("bounce");
@@ -111,6 +115,26 @@ void test_scene_root::setup()
     timer->wait_time = 1.5;
     timer->repeat = true;
     add_child(timer);
+
+    node1 = new Node2D();
+    node1->name = "Node1";
+    add_child(node1);
+
+        node2 = new Node2D();
+        node2->name = "Node2";
+        node1->add_child(node2);
+
+            node3 = new Node2D();
+            node3->name = "Node3";
+            node2->add_child(node3);
+
+        node4 = new Node();
+        node4->name = "Node4";
+        node1->add_child(node4);
+
+            node5 = new Node2D();
+            node5->name = "Node5";
+            node4->add_child(node5);
 
 }
 
@@ -163,7 +187,7 @@ void test_scene_root::_physics_process()
 
     if (Input.is_just_pressed(BUTTON_CONSOLE))
     {
-        default_camera_zoom += Vector2(0.1, 0.1);
+        node1->show();
     }
     if (Input.is_just_pressed(MOUSE_C))
     {

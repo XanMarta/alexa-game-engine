@@ -16,7 +16,7 @@ class Node : public Node_Base
 
         // Variables
 
-        string name = "";           // Must be set in game. Each node has different name
+        string name = "Node";           // Must be set in game. Each node has different name
 
         Node* parent = NULL;
         vector<Node*> child;
@@ -28,19 +28,19 @@ class Node : public Node_Base
         Node(string name);
         ~Node();
 
-
-        void add_child(Node* new_child);
-        Node* get_child(string name);
-        void unlink_child(string name);
-
-
         void emit_signal(string signal_name);
         void connect_signal(string signal_name, Node* target);
         virtual void execute_signal(string signal_name) {}
 
+        // Child method
 
-        void free();
-        void free_child(string name = "");
+        Node* get_child(string name);
+
+        virtual void add_child(Node* new_child);
+        virtual void unlink_child(string name);
+
+        virtual void free();
+        virtual void free_child(string name = "");
 
 
         // Root method
@@ -61,6 +61,10 @@ class Node : public Node_Base
     private:
 
         map<string, SignalPack> signal;
+
+    protected:
+
+        virtual void clear_node();
 
 };
 

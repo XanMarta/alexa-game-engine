@@ -9,6 +9,7 @@
 #include "Timer.h"
 #include "Camera2D.h"
 #include "VisibilityNotifier.h"
+#include "Node2D.h"
 
 
 class test_scene_2 : public Node
@@ -41,6 +42,11 @@ class test_scene_root : public Node
         AnimationPlayer* animate;
         Timer* timer;
 
+        Node2D* node1;
+            Node2D* node2;
+                Node2D* node3;
+            Node* node4;
+                Node2D* node5;
 
 
 

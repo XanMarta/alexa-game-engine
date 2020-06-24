@@ -13,7 +13,7 @@ Node::Node(string name)
 
 Node::~Node()
 {
-//     cout << "Destructor of " << name << "\n";
+     cout << "Destructor of " << name << "\n";
 }
 
 void Node::add_child(Node* new_child)
@@ -66,7 +66,7 @@ void Node::free()
     else
     {
         exit_tree();
-        delete this;
+        clear_node();
     }
 }
 
@@ -78,7 +78,7 @@ void Node::free_child(string name)
         {
             child[i]->free_child();
             child[i]->exit_tree();
-            delete child[i];
+            child[i]->clear_node();
             child[i] = NULL;
         }
         child.clear();
@@ -91,14 +91,18 @@ void Node::free_child(string name)
             {
                 child[i]->free_child();
                 child[i]->exit_tree();
-                delete child[i];
+                child[i]->clear_node();
                 child[i] = NULL;
                 child.erase(child.begin() + i);
                 break;
             }
         }
     }
+}
 
+void Node::clear_node()
+{
+    delete this;
 }
 
 
