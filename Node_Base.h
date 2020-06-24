@@ -17,13 +17,6 @@ class Node_Base
         virtual void enter_tree() = 0;
         virtual void exit_tree() = 0;
 
-        Vector2 position = Vector2().ZERO;
-        Vector2 scale = Vector2().ONE;
-
-        virtual Vector2 get_position() = 0;
-        virtual Vector2 get_scale() = 0;
-
-
         virtual void _enter_tree() {}
 
     protected:
@@ -32,6 +25,7 @@ class Node_Base
         virtual void _process() {}
         virtual void _physics_process() {}
         virtual void _exit_tree() {}
+
 };
 
 #endif // NODE_BASE_H_INCLUDED

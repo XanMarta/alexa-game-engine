@@ -51,9 +51,6 @@ class Node : public Node_Base
         void enter_tree();
         void exit_tree();
 
-        Vector2 get_position();
-        Vector2 get_scale();
-
         // Debug method
 
         void show_tree(int number = 1);

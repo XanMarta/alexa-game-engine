@@ -1,11 +1,11 @@
 #ifndef CAMERA2D_H_INCLUDED
 #define CAMERA2D_H_INCLUDED
 
-#include "Node.h"
+#include "Node2D.h"
 #include "hconsole.h"
 
 
-class Camera2D : public Node
+class Camera2D : public Node2D
 {
     public:
 
@@ -18,7 +18,7 @@ class Camera2D : public Node
         Vector2 global_position = Vector2().ZERO;   // Should not change this
 
 
-        void set_camera(Vector2* anchor, Vector2 margin);
+        void set_camera(Vector2* anchor, Vector2 margin = Vector2().ZERO);
         void set_default_camera();
 
 

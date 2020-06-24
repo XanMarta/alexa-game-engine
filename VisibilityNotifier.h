@@ -1,7 +1,7 @@
 #ifndef VISIBILITYNOTIFIER_H_INCLUDED
 #define VISIBILITYNOTIFIER_H_INCLUDED
 
-#include "Node.h"
+#include "Node2D.h"
 
 /*
     Signal:
@@ -9,7 +9,7 @@
         screen_enter
 */
 
-class VisibilityNotifier : public Node
+class VisibilityNotifier : public Node2D
 {
     public:
 

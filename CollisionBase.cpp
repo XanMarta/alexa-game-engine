@@ -64,8 +64,8 @@ bool on_collision(CollisionShape* shape1, CollisionShape* shape2)
     CollisionPack& collision = shape1->object->collision;
     collision.reset();
 
-    Vector2 pos1 = shape1->get_position();
-    Vector2 pos2 = shape2->get_position();
+    Vector2 pos1 = shape1->get_global_position();
+    Vector2 pos2 = shape2->get_global_position();
 
     if (pos1.x + shape1->_size.x < pos2.x) return false;
     if (pos2.x + shape2->_size.x < pos1.x) return false;

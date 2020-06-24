@@ -30,7 +30,7 @@ class test_scene_root : public Node
     public:
 
         Sprite* backg;
-        Node* character;
+        Node2D* character;
             KinematicBody* player;
                 CollisionShape* player_collision;
                 Sprite* sprite1;
@@ -43,10 +43,7 @@ class test_scene_root : public Node
         Timer* timer;
 
         Node2D* node1;
-            Node2D* node2;
-                Node2D* node3;
-            Node* node4;
-                Node2D* node5;
+            Camera2D* cam;
 
 
 

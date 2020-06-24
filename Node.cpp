@@ -13,7 +13,7 @@ Node::Node(string name)
 
 Node::~Node()
 {
-     cout << "Destructor of " << name << "\n";
+//     cout << "Destructor of " << name << "\n";
 }
 
 void Node::add_child(Node* new_child)
@@ -145,19 +145,6 @@ void Node::exit_tree()
 {
     _exit_tree();
 }
-
-Vector2 Node::get_position()
-{
-    if (parent != NULL) return parent->get_position() + this->position;
-    else return this->position;
-}
-
-Vector2 Node::get_scale()
-{
-    if (parent != NULL) return parent->get_scale() * this->scale;
-    else return this->scale;
-}
-
 
 
 void Node::show_tree(int number)

@@ -20,9 +20,8 @@ void test_scene_root::setup()
     backg->fix_to_size(Vector2(720, 720));
     add_child(backg);
 
-    character = new Node();
+    character = new Node2D();
     character->name = "Character";
-    character->position = Vector2(100, 50);
     add_child(character);
 
         player = new KinematicBody();
@@ -120,22 +119,11 @@ void test_scene_root::setup()
     node1->name = "Node1";
     add_child(node1);
 
-        node2 = new Node2D();
-        node2->name = "Node2";
-        node1->add_child(node2);
-
-            node3 = new Node2D();
-            node3->name = "Node3";
-            node2->add_child(node3);
-
-        node4 = new Node();
-        node4->name = "Node4";
-        node1->add_child(node4);
-
-            node5 = new Node2D();
-            node5->name = "Node5";
-            node4->add_child(node5);
-
+        cam = new Camera2D();
+        cam->name = "Camera";
+        cam->set_camera(&player->position);
+        cam->set_default_camera();
+        node1->add_child(cam);
 }
 
 // ==============================================
@@ -170,7 +158,6 @@ void test_scene_root::_ready()
     timer->connect_signal("timeout", this);
     visible_check->connect_signal("screen_enter", this);
     visible_check->connect_signal("screen_exit", this);
-//    set_camera({0, 0, 360, 360});
 
 }
 
@@ -187,11 +174,11 @@ void test_scene_root::_physics_process()
 
     if (Input.is_just_pressed(BUTTON_CONSOLE))
     {
-        node1->show();
+        cam->zoom += Vector2(0.1, 0.1);
     }
     if (Input.is_just_pressed(MOUSE_C))
     {
-        animate->play("fade");
+        character->modulation.r += 10;
     }
 }
 

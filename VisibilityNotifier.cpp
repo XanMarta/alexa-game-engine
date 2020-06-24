@@ -12,7 +12,7 @@ bool VisibilityNotifier::is_on_screen()
 
 void VisibilityNotifier::_physics_process()
 {
-    Rect2D rect_check = Rect2D(get_position(), _size);
+    Rect2D rect_check = Rect2D(get_global_position(), _size);
     Rect2D camera_check = Rect2D(*Camera.position, Camera._size * (*Camera.zoom).power(-1));
     bool checking = rect_check.is_on_sight(camera_check);
 

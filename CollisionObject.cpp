@@ -32,7 +32,7 @@ void CollisionShape::_physics_process()
     update_collision(this);
     if (show_collision)
     {
-        update_render_collision(get_position(), _size);
+        update_render_collision(get_global_position(), _size);
     }
 }
 

@@ -62,7 +62,7 @@ class CollisionObject : public CanvasItem
 
 // =======================================================
 
-class CollisionShape : public Node
+class CollisionShape : public Node2D
 {
     public:
 

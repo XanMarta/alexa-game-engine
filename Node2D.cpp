@@ -1,5 +1,30 @@
 #include "Node2D.h"
 
+
+Vector2 Node2D::get_global_position()
+{
+    if (parent_2d != NULL) return parent_2d->get_global_position() + this->position;
+    else return this->position;
+}
+
+Vector2 Node2D::get_global_scale()
+{
+    if (parent_2d != NULL) return parent_2d->get_global_scale() * this->scale;
+    else return this->scale;
+}
+
+color_modulation Node2D::get_global_modulation()
+{
+    if (parent_2d != NULL)
+    {
+        color_modulation p_mod = parent_2d->get_global_modulation();
+        return color_modulation(modulation.r + p_mod.r, modulation.g + p_mod.g, modulation.b + p_mod.b, modulation.a + p_mod.a);
+    }
+    else return this->modulation;
+}
+
+
+
 void Node2D::add_child(Node* new_child)
 {
     Node::add_child(new_child);
@@ -8,6 +33,7 @@ void Node2D::add_child(Node* new_child)
 void Node2D::add_child(Node2D* new_child)
 {
     child_2d.push_back(new_child);
+    new_child->parent_2d = this;
     Node::add_child(new_child);
 }
 
