@@ -1,7 +1,7 @@
 #include "CollisionObject.h"
 #include "RenderPack.h"
 
-bool show_collision = false;
+bool show_collision = true;
 
 
 void CollisionObject::set_collision_shape(CollisionShape* shape)

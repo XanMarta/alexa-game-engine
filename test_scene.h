@@ -45,7 +45,7 @@ class test_scene_root : public Node
         Node2D* node1;
             Camera2D* cam;
 
-
+        Vector2 velocity = Vector2().ZERO;
 
         void _ready();
         void _physics_process();

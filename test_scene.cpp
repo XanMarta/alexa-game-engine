@@ -122,7 +122,7 @@ void test_scene_root::setup()
         cam = new Camera2D();
         cam->name = "Camera";
         cam->set_camera(&player->position);
-        cam->set_default_camera();
+//        cam->set_default_camera();
         node1->add_child(cam);
 }
 
@@ -167,9 +167,14 @@ void test_scene_root::_physics_process()
     direction.x = Input.get_action_length(MOVE_RIGHT) - Input.get_action_length(MOVE_LEFT);
     direction.y = Input.get_action_length(MOVE_DOWN) - Input.get_action_length(MOVE_UP);
     direction = direction.normalize();
-    direction *= 3;
 
-    player->move_and_slide(direction);
+
+    velocity.x = direction.x * 3;
+    if (direction.y < 0) velocity.y = -5;
+    velocity.y += 0.3;
+
+    velocity = player->move_and_slide(velocity);
+    cout << "Velocity: " << velocity.x << " " << velocity.y << "\n";
 
 
     if (Input.is_just_pressed(BUTTON_CONSOLE))

@@ -10,11 +10,13 @@
 
     .   Node
     .   .   AnimationPlayer
-    .   .   Camera2D
-    .   .   CanvasItem
-    .   .   .   CollisionObject
-    .   .   .   .   KinematicBody
-    .   .   .   Sprite
+    .   .   Node2D
+    .   .   .   Camera2D
+    .   .   .   CanvasItem
+    .   .   .   .   CollisionObject
+    .   .   .   .   .   KinematicBody
+    .   .   .   .   Sprite
+    .   .   .   VisibilityNotifier
     .   .   Timer
     .
     .

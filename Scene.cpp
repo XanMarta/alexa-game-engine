@@ -18,8 +18,8 @@ void Scene::run()
         {
             clear_console();
             check_event();
-            collision_phase();
             process_phase();
+            collision_phase();
             render_phase();
             if (is_exit_console()) is_running = false;
             wait_phase();
