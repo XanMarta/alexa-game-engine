@@ -116,17 +116,17 @@ void test_scene_root::setup()
     add_child(animate);
 
     timer = new Timer();
-//    timer->name = "timer";
+    timer->name = "timer";
     timer->wait_time = 1.5;
     timer->repeat = true;
     add_child(timer);
 
     node1 = new Node2D();
-//    node1->name = "Node1";
+    node1->name = "Node1";
     add_child(node1);
 
         cam = new Camera2D();
-//        cam->name = "Camera";
+        cam->name = "Camera";
         cam->set_camera(&player->position);
 //        cam->set_default_camera();
         node1->add_child(cam);
@@ -146,25 +146,19 @@ void test_scene_2::execute_signal(string signal_name)
 
 // ==============================================
 
-void test_scene_root::execute_signal(string signal_name)
+void test_scene_root::execute_signal(string func_name)
 {
-    if (signal_name == "timeout") go();
-    else if (signal_name == "on_just_collision") dance();
-    else if (signal_name == "on_just_not_collision") dance();
-    else if (signal_name == "screen_enter") go();
-    else if (signal_name == "screen_exit") ball_out();
+         if (func_name == "player_enter") player_enter();
+    else if (func_name == "player_exit") player_exit();
+    else if (func_name == "ball_out_screen") ball_out();
 }
 
 void test_scene_root::_ready()
 {
-    test->connect_signal("run", this);
-    connect_signal("bom", test);
-    player->connect_signal("on_just_collision", this);
-    player->connect_signal("on_just_not_collision", this);
-    timer->connect_signal("timeout", this);
-    visible_check->connect_signal("screen_enter", this);
-    visible_check->connect_signal("screen_exit", this);
-    ball_check->connect_signal("screen_exit", this);
+    visible_check->connect_signal("screen_enter", this, "player_enter");
+    visible_check->connect_signal("screen_exit", this, "player_exit");
+    ball_check->connect_signal("screen_exit", this, "ball_out_screen");
+    ball_check->connect_signal("screen_exit", this, "player_exit");
 
 }
 
@@ -211,24 +205,20 @@ void test_scene_root::_exit_tree()
 }
 
 
-void test_scene_root::go()
+
+void test_scene_root::player_enter()
 {
-    cout << "Go function\n";
+    cout << "Player enter screen\n";
 }
 
-void test_scene_root::dance()
+void test_scene_root::player_exit()
 {
-
+    cout << "Player exit screen\n";
 }
 
 void test_scene_root::ball_out()
 {
     cout << "Ball out\n";
     ball_velocity.x *= -1.0;
-}
-
-void test_scene_root::stop()
-{
-    cout << "Stop function\n";
 }
 

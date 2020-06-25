@@ -51,9 +51,9 @@ void Node::emit_signal(string signal_name)
     if (signal.count(signal_name) > 0) signal[signal_name].emit(signal_name);
 }
 
-void Node::connect_signal(string signal_name, Node* target)
+void Node::connect_signal(string signal_name, Node* target, string func_name)
 {
-    signal[signal_name].connect(target);
+    signal[signal_name].connect(target, func_name);
 }
 
 void Node::free()
@@ -161,15 +161,21 @@ void Node::show_tree(int number)
 
 // ===========================================================
 
+SignalTarget::SignalTarget(Node* node, string func_name)
+{
+    this->node = node;
+    this->func_name = func_name;
+}
+
 void SignalPack::emit(string signal_name)
 {
     for (int i = 0; i < target.size(); i++)
     {
-        target[i]->execute_signal(signal_name);
+        target[i].node->execute_signal(target[i].func_name);
     }
 }
 
-void SignalPack::connect(Node* node)
+void SignalPack::connect(Node* node, string func_name)
 {
-    target.push_back(node);
+    target.push_back(SignalTarget(node, func_name));
 }

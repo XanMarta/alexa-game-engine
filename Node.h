@@ -7,7 +7,7 @@
 #include "Node_Base.h"
 using namespace std;
 
-
+struct SignalPair;
 class SignalPack;
 
 class Node : public Node_Base
@@ -28,11 +28,13 @@ class Node : public Node_Base
         Node(string name);
         ~Node();
 
-        void emit_signal(string signal_name);
-        void connect_signal(string signal_name, Node* target);
-        virtual void execute_signal(string signal_name) {}
+            // Signal
 
-        // Child method
+        void emit_signal(string signal_name);
+        void connect_signal(string signal_name, Node* target, string func_name);
+        virtual void execute_signal(string func_name) {}
+
+            // Child method
 
         Node* get_child(string name);
 
@@ -43,7 +45,7 @@ class Node : public Node_Base
         virtual void free_child(string name = "");
 
 
-        // Root method
+            // Root method
 
         void ready();
         void process();
@@ -51,9 +53,10 @@ class Node : public Node_Base
         void enter_tree();
         void exit_tree();
 
-        // Debug method
+            // Debug method
 
         void show_tree(int number = 1);
+
 
     private:
 
@@ -67,16 +70,24 @@ class Node : public Node_Base
 
 // =========================================================
 
+struct SignalTarget
+{
+    Node* node;
+    string func_name;
+
+    SignalTarget(Node* node, string func_name);
+};
+
 class SignalPack
 {
     public:
 
         void emit(string signal_name);
-        void connect(Node* node);
+        void connect(Node* node, string func_name);
 
     private:
 
-        vector<Node*> target;
+        vector<SignalTarget> target;
 };
 
 // =========================================================

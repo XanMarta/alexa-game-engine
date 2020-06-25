@@ -47,7 +47,7 @@ class test_scene_root : public Node
             Camera2D* cam;
 
         Vector2 velocity = Vector2().ZERO;
-        Vector2 ball_velocity = Vector2(1, 0);
+        Vector2 ball_velocity = Vector2(6, 0);
 
         void _ready();
         void _physics_process();
@@ -56,10 +56,11 @@ class test_scene_root : public Node
 
         void execute_signal(string signal_name);
 
-        void go();
-        void dance();
-        void stop();
+
+        void player_enter();
+        void player_exit();
         void ball_out();
+
 
         void setup();
 };

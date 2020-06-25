@@ -82,19 +82,19 @@ animate->start();
 
 void test_scene_root::_ready()                                  // Connect
 {
-    test->connect_signal("run", this);
-    connect_signal("bom", test);
-    player->connect_signal("on_just_collision", this);
-    player->connect_signal("on_just_not_collision", this);
+    visible_check->connect_signal("screen_enter", this, "player_enter");
+    visible_check->connect_signal("screen_exit", this, "player_exit");
+    ball_check->connect_signal("screen_exit", this, "ball_out_screen");
+    ball_check->connect_signal("screen_exit", this, "player_exit");
 }
 
 emit_signal("animation_start");                                 // Emit
 
-void test_scene_root::execute_signal(string signal_name)        // Use
+void test_scene_root::execute_signal(string func_name)        // Use
 {
-    if (signal_name == "run") go();
-    else if (signal_name == "on_just_collision") dance();
-    else if (signal_name == "on_just_not_collision") stop();
+    if (func_name == "player_enter") player_enter();
+    else if (func_name == "player_exit") player_exit();
+    else if (func_name == "ball_out_screen") ball_out();
 }
 
 ===============================================================================================================
