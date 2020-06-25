@@ -8,8 +8,8 @@ class KinematicBody : public CollisionObject
 {
     public:
 
-        void move_and_collide(const Vector2& velocity);
-        Vector2 move_and_slide(const Vector2& velocity);
+        Vector2 move_and_collide(const Vector2& velocity);
+        Vector2 move_and_slide(const Vector2& velocity);        // Slide with static_body
 
 };
 

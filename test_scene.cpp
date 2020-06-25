@@ -51,6 +51,7 @@ void test_scene_root::setup()
     ball = new CollisionObject();
     ball->name = "Ball";
     ball->position = Vector2(100, 100);
+    ball->is_static_body = true;
     add_child(ball);
 
         ball_collision = new CollisionShape();
@@ -173,9 +174,13 @@ void test_scene_root::_physics_process()
     if (direction.y < 0) velocity.y = -5;
     velocity.y += 0.3;
 
-    velocity = player->move_and_slide(velocity);
-    cout << "Velocity: " << velocity.x << " " << velocity.y << "\n";
+    velocity = player->move_and_collide(velocity);
 
+    if (player->collision.is_collision)
+    {
+        cout << "Collision. Direct: " << player->collision.direct.x << " " << player->collision.direct.y << "\n";
+    }
+    cout << "Velocity: " << velocity.x << " " << velocity.y << "\n";
 
     if (Input.is_just_pressed(BUTTON_CONSOLE))
     {
