@@ -1,9 +1,9 @@
 #include "Node.h"
-
+#include "hbase.h"
 
 Node::Node()
 {
-    name = "Node";
+    name = "Node" + to_string(random(1000, 90000));
 }
 
 Node::Node(string name)

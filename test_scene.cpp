@@ -68,6 +68,11 @@ void test_scene_root::setup()
         wal->scale = Vector2(0.1, 0.1);
         ball->add_child(wal);
 
+        ball_check = new VisibilityNotifier();
+        ball_check->name = "visibility ball";
+        ball_check->_size = Vector2(100, 100);
+        ball->add_child(ball_check);
+
     test = new test_scene_2();
     test->name = "test";
     add_child(test);
@@ -111,17 +116,17 @@ void test_scene_root::setup()
     add_child(animate);
 
     timer = new Timer();
-    timer->name = "timer";
+//    timer->name = "timer";
     timer->wait_time = 1.5;
     timer->repeat = true;
     add_child(timer);
 
     node1 = new Node2D();
-    node1->name = "Node1";
+//    node1->name = "Node1";
     add_child(node1);
 
         cam = new Camera2D();
-        cam->name = "Camera";
+//        cam->name = "Camera";
         cam->set_camera(&player->position);
 //        cam->set_default_camera();
         node1->add_child(cam);
@@ -147,7 +152,7 @@ void test_scene_root::execute_signal(string signal_name)
     else if (signal_name == "on_just_collision") dance();
     else if (signal_name == "on_just_not_collision") dance();
     else if (signal_name == "screen_enter") go();
-    else if (signal_name == "screen_exit") stop();
+    else if (signal_name == "screen_exit") ball_out();
 }
 
 void test_scene_root::_ready()
@@ -159,6 +164,7 @@ void test_scene_root::_ready()
     timer->connect_signal("timeout", this);
     visible_check->connect_signal("screen_enter", this);
     visible_check->connect_signal("screen_exit", this);
+    ball_check->connect_signal("screen_exit", this);
 
 }
 
@@ -174,13 +180,15 @@ void test_scene_root::_physics_process()
     if (direction.y < 0) velocity.y = -5;
     velocity.y += 0.3;
 
-    velocity = player->move_and_collide(velocity);
+    velocity = player->move_and_slide(velocity);
 
-    if (player->collision.is_collision)
-    {
-        cout << "Collision. Direct: " << player->collision.direct.x << " " << player->collision.direct.y << "\n";
-    }
-    cout << "Velocity: " << velocity.x << " " << velocity.y << "\n";
+    ball->position += ball_velocity;
+
+//    if (player->collision.is_collision)
+//    {
+//        cout << "Collision. Direct: " << player->collision.direct.x << " " << player->collision.direct.y << "\n";
+//    }
+//    cout << "Velocity: " << velocity.x << " " << velocity.y << "\n";
 
     if (Input.is_just_pressed(BUTTON_CONSOLE))
     {
@@ -211,6 +219,12 @@ void test_scene_root::go()
 void test_scene_root::dance()
 {
 
+}
+
+void test_scene_root::ball_out()
+{
+    cout << "Ball out\n";
+    ball_velocity.x *= -1.0;
 }
 
 void test_scene_root::stop()

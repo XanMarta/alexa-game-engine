@@ -38,6 +38,7 @@ class test_scene_root : public Node
         CollisionObject* ball;
             CollisionShape* ball_collision;
             Sprite* wal;
+            VisibilityNotifier* ball_check;
         test_scene_2* test;
         AnimationPlayer* animate;
         Timer* timer;
@@ -46,6 +47,7 @@ class test_scene_root : public Node
             Camera2D* cam;
 
         Vector2 velocity = Vector2().ZERO;
+        Vector2 ball_velocity = Vector2(1, 0);
 
         void _ready();
         void _physics_process();
@@ -57,6 +59,7 @@ class test_scene_root : public Node
         void go();
         void dance();
         void stop();
+        void ball_out();
 
         void setup();
 };
